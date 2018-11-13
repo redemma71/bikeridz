@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="app_name">Bike Ridz</string>
+    <string name="bikeRidzLogo">Bike Ridz logo</string>
+    <string-array name="utilities">
+        <item>Find a Bikeshop</item>
+        <item>My Wishlist</item>
+        <item>Map My Ride</item>
+        <item>My Turn-by-Turn</item>
+        <item>My Selfie Markers</item>
+    </string-array>
+
+</resources>
