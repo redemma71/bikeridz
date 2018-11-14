@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ProjectPortal</string>
+
+    <string-array name="Projects_list">
+        <item>Weather Forecast</item>
+        <item>Connect Me</item>
+        <item>What\'s eat</item>
+        <item>Project Portal</item>
+    </string-array>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_project_main">ProjectMainActivity</string>
+    <string name="action_settings">Settings</string>
+</resources>

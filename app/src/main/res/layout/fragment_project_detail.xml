@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="edu.bu.projectportal.ProjectDetailFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/projTitleTextViewId"
+        android:text="Project Title"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_weight="1"
+        android:id="@+id/projSummaryTextViewId"
+        android:text="This is the detail of the project" />
+
+
+</LinearLayout>
+
+
