@@ -57,7 +57,7 @@ public class ProjectDetailFragment extends Fragment {
         keywordsTextView = view.findViewById(R.id.projKeywordsTextViewId);
         switchButton = view.findViewById(R.id.switchButton);
 
-        if (getArguments()!= null)
+        if (getArguments() != null)
             projectId = getArguments().getInt("projectid");
 
         Log.i("projectid", " " + projectId);
@@ -78,11 +78,11 @@ public class ProjectDetailFragment extends Fragment {
         titleTextView.setText(projId + ":" + Project.projects[projId].getTitle());
         summaryTextView.setText(Project.projects[projId].getSummary());
 
-        String[] authors = Project.projects[projectId].getAuthors();
+        String[] authors = Project.projects[this.projectId].getAuthors();
         String authorsConcat = this.concatString(authors);
         authorsTextView.setText(authorsConcat);
 
-        String[] links = Project.projects[projectId].getLinks();
+        String[] links = Project.projects[this.projectId].getLinks();
         String linksConcat = this.concatString(links);
         linksTextView.setText(linksConcat);
 
@@ -90,19 +90,20 @@ public class ProjectDetailFragment extends Fragment {
         String keywordsConcat = this.concatString(keywords);
         keywordsTextView.setText(keywordsConcat);
 
-        boolean isFavorite = Project.projects[projectId].isFavorite();
+        boolean isFavorite = Project.projects[this.projectId].isFavorite();
         switchButton.setChecked(isFavorite);
 
         switchButton.setTag("DONOTRUN");
         switchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+            public void onCheckedChanged(CompoundButton compoundButton, boolean favorite) {
 
-                if (switchButton.getTag() != null) {
-                    switchButton.setTag(null);
-                    return;
-                }
-                changeFavorite();
+//                if (switchButton.getTag() != null) {
+//                    switchButton.setTag(null);
+//                    return;
+//                }
+//                changeFavorite();
+                Project.projects[projectId].setFavorite(favorite);
             }
         });
 
