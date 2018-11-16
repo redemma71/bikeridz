@@ -35,7 +35,7 @@ public class ProjectDetailFragment extends Fragment {
         if (getArguments()!= null)
             projectId = getArguments().getInt("projectid");
 
-        Log.d("projectid", " " + projectId);
+        Log.i("projectid", " " + projectId);
         setProject(projectId);
 
         return view;
