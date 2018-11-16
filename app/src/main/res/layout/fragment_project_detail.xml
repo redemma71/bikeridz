@@ -21,7 +21,101 @@
         android:id="@+id/projSummaryTextViewId"
         android:text="This is the detail of the project" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+    >
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:textStyle="bold"
+            android:text="@string/authorNameLabel"
+        />
+
+        <TextView
+            android:id="@+id/projAuthorsTextViewId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="These are the project's authors."
+        />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+    >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:textStyle="bold"
+            android:text="@string/linksLabel"
+        />
+
+        <TextView
+            android:id="@+id/projLinksTextViewId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="These are links related to the project."
+        />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+    >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:textStyle="bold"
+            android:text="@string/keywordsLabel"
+        />
+
+
+        <TextView
+            android:id="@+id/projKeywordsTextViewId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="These are keywords related to the project."
+        />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+    >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/favoriteLabel"
+            android:textStyle="bold"
+        />
+
+        <Switch
+            android:id="@+id/switchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="3dp"
+            android:textOn="@string/yesLabel"
+            android:textOff="@string/noLabel"
+            android:showText="true"
+        />
+
+    </LinearLayout>
 
 
 </LinearLayout>

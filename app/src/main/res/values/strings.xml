@@ -7,7 +7,17 @@
         <item>What\'s eat</item>
         <item>Project Portal</item>
     </string-array>
+
     <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_project_main">ProjectMainActivity</string>
     <string name="action_settings">Settings</string>
+
+    <string name="yesLabel">Yes</string>
+    <string name="noLabel">No</string>
+    <string name="favoriteLabel">Favorite Project?</string>
+
+    <string name="authorNameLabel">Project Authors:</string>
+    <string name="linksLabel">Links:</string>
+    <string name="keywordsLabel">Keywords:</string>
+
 </resources>
