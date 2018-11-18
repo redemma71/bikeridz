@@ -75,7 +75,7 @@ public class ProjectDetailFragment extends Fragment {
 
         projectId = projId;
 
-        titleTextView.setText(projId + ":" + Project.projects[projId].getTitle());
+        titleTextView.setText(projId + ": " + Project.projects[projId].getTitle());
         summaryTextView.setText(Project.projects[projId].getSummary());
 
         String[] authors = Project.projects[this.projectId].getAuthors();
@@ -92,22 +92,12 @@ public class ProjectDetailFragment extends Fragment {
 
         boolean isFavorite = Project.projects[this.projectId].isFavorite();
         switchButton.setChecked(isFavorite);
-
-        switchButton.setTag("DONOTRUN");
         switchButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean favorite) {
-
-//                if (switchButton.getTag() != null) {
-//                    switchButton.setTag(null);
-//                    return;
-//                }
-//                changeFavorite();
                 Project.projects[projectId].setFavorite(favorite);
             }
         });
-
-
 
     }
 
@@ -137,6 +127,10 @@ public class ProjectDetailFragment extends Fragment {
             }
         }
         return string;
+    }
+
+    public void updateTitle(String newTitle) {
+        titleTextView.setText(newTitle);
     }
 
 

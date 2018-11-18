@@ -36,9 +36,6 @@ public class ProjectListAdapter extends RecyclerView.Adapter<ProjectListAdapter.
         viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(view.getContext(), ProjectDetailActivity.class);
-//                intent.putExtra("projectid", position);
-//                view.getContext().startActivity(intent);
                 listener = (Listener)view.getContext();
                 if (listener != null)
                     listener.onClick(position);

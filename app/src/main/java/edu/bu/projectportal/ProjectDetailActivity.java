@@ -7,9 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class ProjectDetailActivity extends AppCompatActivity {
+public class ProjectDetailActivity extends AppCompatActivity implements ProjectEditFragment.OnFragmentInteractionListener {
 
     ProjectDetailFragment projectDetailFragment;
+    ProjectEditFragment projectEditFragment;
 
 
     @Override
@@ -21,6 +22,8 @@ public class ProjectDetailActivity extends AppCompatActivity {
         //create a fragment object
         projectDetailFragment = new ProjectDetailFragment();
         projectDetailFragment.setArguments(getIntent().getExtras());
+        projectEditFragment = new ProjectEditFragment();
+        projectEditFragment.setArguments(getIntent().getExtras());
 
         // get the reference to the FragmentManger object
         FragmentManager fragManager = getSupportFragmentManager();
@@ -28,8 +31,16 @@ public class ProjectDetailActivity extends AppCompatActivity {
         FragmentTransaction transaction = fragManager.beginTransaction();
         // add the fragment into the transaction
         transaction.add(R.id.proDetailfragContainer, projectDetailFragment);
+        transaction.add(R.id.projectEditFragmentContainer, projectEditFragment);
         // commit the transaction.
         transaction.commit();
+    }
+
+    @Override
+    public void onFragmentInteraction(String content) {
+        ProjectDetailFragment projectDetailFragment =
+                (ProjectDetailFragment) getSupportFragmentManager().findFragmentById(R.id.proDetailfragContainer);
+        projectDetailFragment.updateTitle(content);
     }
 
 

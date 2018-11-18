@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,18 +8,43 @@
     android:orientation="horizontal">
 
 
-    <fragment
-        android:id="@+id/listfragment"
-        android:name="edu.bu.projectportal.ProjectsListFragment"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
 
-    <fragment
-        android:id="@+id/detailfragment"
-        android:name="edu.bu.projectportal.ProjectDetailFragment"
-        android:layout_width="0dp"
+        <fragment
+            android:id="@+id/listfragment"
+            android:name="edu.bu.projectportal.ProjectsListFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+        />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="2" />
+        android:orientation="vertical"
+        android:layout_gravity="top"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="10dp"
+    >
+
+        <fragment
+            android:id="@+id/detailfragment"
+            android:name="edu.bu.projectportal.ProjectDetailFragment"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+        />
+
+        <fragment
+            android:id="@+id/editFragment"
+            android:name="edu.bu.projectportal.ProjectEditFragment"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+        />
+
+    </LinearLayout>
+
 
 </LinearLayout>
