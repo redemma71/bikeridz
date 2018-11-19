@@ -7,7 +7,10 @@ public class Coords {
     private double lat = NaN;
     private double lng = NaN;
 
-    public Coords() { }
+    public Coords() {
+        this.lat = 48.858093;
+        this.lng = 2.294694;
+    }
 
     public double getLat() {
         return lat;

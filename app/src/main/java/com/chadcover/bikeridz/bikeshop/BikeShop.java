@@ -2,7 +2,20 @@ package com.chadcover.bikeridz.bikeshop;
 
 public class BikeShop {
 
-    public BikeShop() { }
+    private String name;
+    private Address address;
+    private Coords coords;
+    private String phoneNumber;
+    private Hours hours;
+
+
+    public BikeShop() {
+        this.name = "My Bikeshop";
+        this.address = new Address();
+        this.coords = new Coords();
+        this.phoneNumber = "555.111.2222";
+        this.hours = new Hours();
+    }
 
     public String getName() {
 
@@ -44,11 +57,5 @@ public class BikeShop {
     public void setHours(Hours hours) {
         this.hours = hours;
     }
-
-    private String name;
-    private Address address;
-    private Coords coords;
-    private String phoneNumber;
-    private Hours hours;
 
 }

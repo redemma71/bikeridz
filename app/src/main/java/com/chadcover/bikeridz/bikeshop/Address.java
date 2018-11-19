@@ -1,12 +1,69 @@
 package com.chadcover.bikeridz.bikeshop;
 
 public class Address {
+
     private String streetNumber;
     private String streetName;
     private String city;
     private State state;
+    private String zipCode;
     private String fullAddress;
 
-    public Address() { }
+    public Address() {
+        this.streetNumber = "42";
+        this.streetName = "Galifray Blvd.";
+        this.city = "Baltimore";
+        this.state = State.Maryland;
+        this.zipCode = "21136";
+        this.fullAddress = "42 Galifray Blvd. Baltimore, MD 21136";
+    }
+
+    public String getStreetNumber() {
+        return streetNumber;
+    }
+
+    public void setStreetNumber(String streetNumber) {
+        this.streetNumber = streetNumber;
+    }
+
+    public String getStreetName() {
+        return streetName;
+    }
+
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public String getFullAddress() {
+        return fullAddress;
+    }
+
+    public void setFullAddress(String fullAddress) {
+        this.fullAddress = fullAddress;
+    }
 
 }

@@ -9,45 +9,60 @@ public class Hours {
     private String friday = null;
     private String saturday = null;
     private String sunday = null;
-    private String[] Week =
-            {monday, tuesday, wednesday,
-             thursday, friday, saturday,
-             sunday};
+    private String[] week = {this.monday, this.tuesday, this.wednesday,
+                this.thursday, this.friday, this.saturday, this.sunday};
+
+    Hours() {
+        this.monday = "Closed";
+        this.week[0] = this.monday;
+        this.tuesday = "9am-5pm";
+        this.week[1] = this.tuesday;
+        this.wednesday = "9am-5pm";
+        this.week[2] = this.wednesday;
+        this.thursday = "9am-5pm";
+        this.week[3] = this.thursday;
+        this.friday = "9am-8pm";
+        this.week[4] = this.friday;
+        this.saturday = "9am-8pm";
+        this.week[5] = this.saturday;
+        this.sunday = "12pm-5pm";
+        this.week[6] = this.sunday;
+    }
 
     public void setMonday(String monday) {
         this.monday = monday;
     }
 
     public void setTuesday(String tuesday) {
-        tuesday = tuesday;
+        this.tuesday = tuesday;
     }
 
     public void setWednesday(String wednesday) {
-        wednesday = wednesday;
+        this.wednesday = wednesday;
     }
 
     public void setThursday(String thursday) {
-        thursday = thursday;
+        this.thursday = thursday;
     }
 
 
     public void setFriday(String friday) {
-        friday = friday;
+        this.friday = friday;
     }
 
     public void setSaturday(String saturday) {
-        saturday = saturday;
+        this.saturday = saturday;
     }
 
     public void setSunday(String sunday) {
-        sunday = sunday;
+        this.sunday = sunday;
     }
 
     public String[] getWeek() {
-        return Week;
+        return this.week;
     }
 
     public void setWeek(String[] week) {
-        Week = week;
+        this.week = week;
     }
 }
