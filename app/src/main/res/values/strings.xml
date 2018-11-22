@@ -10,4 +10,7 @@
         <item>My Selfie Markers</item>
     </string-array>
 
+    <string name="findBikeShopHeader">Nearest Bike Shop</string>
+    <string name="title_activity_map_my_ride">Map</string>
+
 </resources>

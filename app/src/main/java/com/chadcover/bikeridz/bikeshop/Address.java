@@ -5,7 +5,7 @@ public class Address {
     private String streetNumber;
     private String streetName;
     private String city;
-    private State state;
+    private String state;
     private String zipCode;
     private String fullAddress;
 
@@ -13,9 +13,9 @@ public class Address {
         this.streetNumber = "42";
         this.streetName = "Galifray Blvd.";
         this.city = "Baltimore";
-        this.state = State.Maryland;
+        this.state = "MD";
         this.zipCode = "21136";
-        this.fullAddress = "42 Galifray Blvd. Baltimore, MD 21136";
+        this.fullAddress = "42 Galifray Blvd. Baltimore, MDstree 21136";
     }
 
     public String getStreetNumber() {
@@ -42,11 +42,11 @@ public class Address {
         this.city = city;
     }
 
-    public State getState() {
+    public String getState() {
         return state;
     }
 
-    public void setState(State state) {
+    public void setState(String state) {
         this.state = state;
     }
 

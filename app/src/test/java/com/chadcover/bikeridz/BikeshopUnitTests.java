@@ -5,12 +5,14 @@ import com.chadcover.bikeridz.bikeshop.Address;
 import com.chadcover.bikeridz.bikeshop.BikeShop;
 import com.chadcover.bikeridz.bikeshop.Hours;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class BikeshopUnitTests {
 
+    @Ignore
     @Test
     public void bikeshopIsConstructedCorrectly() {
 

@@ -12,7 +12,7 @@ public class Hours {
     private String[] week = {this.monday, this.tuesday, this.wednesday,
                 this.thursday, this.friday, this.saturday, this.sunday};
 
-    Hours() {
+    public Hours() {
         this.monday = "Closed";
         this.week[0] = this.monday;
         this.tuesday = "9am-5pm";
@@ -33,29 +33,55 @@ public class Hours {
         this.monday = monday;
     }
 
+    public String getMonday() {
+        return monday;
+    }
     public void setTuesday(String tuesday) {
         this.tuesday = tuesday;
+    }
+
+    public String getTuesday() {
+        return tuesday;
     }
 
     public void setWednesday(String wednesday) {
         this.wednesday = wednesday;
     }
 
+    public String getWednesday() {
+        return wednesday;
+    }
+
     public void setThursday(String thursday) {
         this.thursday = thursday;
     }
 
+    public String getThursday() {
+        return thursday;
+    }
 
     public void setFriday(String friday) {
         this.friday = friday;
+    }
+
+    public String getFriday() {
+        return friday;
     }
 
     public void setSaturday(String saturday) {
         this.saturday = saturday;
     }
 
+    public String getSaturday() {
+        return saturday;
+    }
+
     public void setSunday(String sunday) {
         this.sunday = sunday;
+    }
+
+    public String getSunday() {
+        return sunday;
     }
 
     public String[] getWeek() {

@@ -6,12 +6,14 @@ import com.chadcover.bikeridz.bike.Brake;
 import com.chadcover.bikeridz.bike.Part;
 import com.chadcover.bikeridz.bike.Seat;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class BikeUnitTests {
 
+    @Ignore
     @Test
     public void bikeDetailsAreCorrect() {
         Bike bike = new Bike();
@@ -31,6 +33,7 @@ public class BikeUnitTests {
         assertEquals("ROAD", bike.getType().toString());
     }
 
+    @Ignore
     @Test
     public void brakeNameIsCorrect() {
         Brake brake = new Brake();
@@ -38,7 +41,7 @@ public class BikeUnitTests {
         assertEquals("new part", brakeName);
     }
 
-
+    @Ignore
     @Test
     public void canAddToBikeInventory() {
         Bike bike = new Bike();
