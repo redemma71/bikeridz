@@ -129,8 +129,26 @@ public class ProjectDetailFragment extends Fragment {
         return string;
     }
 
-    public void updateTitle(String newTitle) {
+    public void updateTitleInput(String newTitle) {
         titleTextView.setText(newTitle);
+    }
+
+    public void updateSummaryInput(String newSummary) {
+        summaryTextView.setText(newSummary);
+    }
+
+
+    public void updateAuthorsInput(String newAuthors) {
+        authorsTextView.setText(newAuthors);
+    }
+
+
+    public void updateLinksInput(String newLinks) {
+        linksTextView.setText(newLinks);
+    }
+
+    public void updateKeywordsInput(String newKeywords) {
+        keywordsTextView.setText(newKeywords);
     }
 
 

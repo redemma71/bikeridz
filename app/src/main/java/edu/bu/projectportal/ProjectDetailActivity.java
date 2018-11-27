@@ -5,7 +5,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 public class ProjectDetailActivity extends AppCompatActivity implements ProjectEditFragment.OnFragmentInteractionListener {
 
@@ -37,12 +39,37 @@ public class ProjectDetailActivity extends AppCompatActivity implements ProjectE
     }
 
     @Override
-    public void onFragmentInteraction(String content) {
+    public void onFragmentInteraction(String textViewType, String textInput) {
         ProjectDetailFragment projectDetailFragment =
                 (ProjectDetailFragment) getSupportFragmentManager().findFragmentById(R.id.proDetailfragContainer);
-        projectDetailFragment.updateTitle(content);
-    }
 
+        switch (textViewType) {
+            case "titleTextView":
+                Log.i("ONFRAGMENTINTERACTION","textInput");
+                projectDetailFragment.updateTitleInput(textInput);
+                break;
+            case "summaryTextView":
+                Log.i("ONFRAGMENTINTERACTION", "summaryInput");
+                projectDetailFragment.updateSummaryInput(textInput);
+                break;
+            case "authorsTextView":
+                Log.i("ONFRAGMENTINTERACTION", "authorsInput");
+                projectDetailFragment.updateAuthorsInput(textInput);
+                break;
+            case "linksTextView":
+                Log.i("ONFRAGMENTINTERACTION", "linksInput");
+                projectDetailFragment.updateLinksInput(textInput);
+                break;
+            case "keywordsTextView":
+                Log.i("ONFRAGMENTINTERACTION", "keywordsInput");
+                projectDetailFragment.updateKeywordsInput(textInput);
+                break;
+            default:
+                // do nothing; no view available.
+        }
+
+
+    }
 
     public void onClick(View view){
         int id = projectDetailFragment.getProjectId();

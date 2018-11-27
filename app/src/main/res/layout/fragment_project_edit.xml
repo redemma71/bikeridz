@@ -17,16 +17,18 @@
         android:layout_height="wrap_content"
         android:text="@string/editLabel"
         android:textStyle="bold|italic"
-        android:textSize="15sp"
+        android:textSize="20sp"
         android:gravity="center_horizontal"
     />
 
     <LinearLayout
         android:id="@+id/edit_title_view_group"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
         android:orientation="horizontal"
-        >
+    >
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,20 +37,112 @@
             android:textStyle="bold"
         />
 
-
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/projectTitleEditViewId"
-            android:text="Testing"
             android:inputType="text"
         />
+    </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/edit_summary_view_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:orientation="horizontal"
+        >
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Summary: "
+            android:textStyle="bold"
+        />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/projectSummaryEditViewId"
+            android:inputType="text"
+        />
     </LinearLayout>
 
 
+    <LinearLayout
+        android:id="@+id/edit_authors_view_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:orientation="horizontal"
+    >
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Authors: "
+            android:textStyle="bold"
+        />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/projectAuthorsEditViewId"
+            android:inputType="text"
+        />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/edit_links_view_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:orientation="horizontal"
+    >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Links: "
+            android:textStyle="bold"
+        />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/projectLinksEditViewId"
+            android:inputType="text"
+        />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/edit_keywords_view_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:orientation="horizontal"
+    >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Keywords: "
+            android:textStyle="bold"
+        />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/projectKeywordsEditViewId"
+            android:inputType="text"
+        />
+    </LinearLayout>
 
 
 </LinearLayout>
