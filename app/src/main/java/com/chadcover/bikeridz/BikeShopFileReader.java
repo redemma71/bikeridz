@@ -52,7 +52,6 @@ public class BikeShopFileReader {
 
             // if buffer is not empty
             while ((line = reader.readLine()) != null) {
-                Log.i("CSVFILEREADER","Line: " + line);
                 // use a comma delimiter
                 String[] tokens = line.split(",");
 
@@ -100,11 +99,8 @@ public class BikeShopFileReader {
 
                 // add the data
                 bikeShops.add(bikeShop);
-                Log.i("CSVFILEREADER", "Created: " + bikeShop.getName() + " record.");
-
             }
         } catch (IOException ioe) {
-            Log.i("CSVFILEREADER","Error while reading the input file.");
             ioe.printStackTrace();
         }
         finally {

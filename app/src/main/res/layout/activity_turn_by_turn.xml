@@ -7,14 +7,47 @@
     android:orientation="vertical"
     tools:context="com.chadcover.bikeridz.TurnByTurnActivity">
 
-    <TextView
-        android:id="@+id/findBikeShop"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:textSize="24sp"
-        android:layout_marginTop="20dp"
-        android:text="My Turn-by-Turn"
-        />
+        <LinearLayout
+            android:id="@+id/latitudeInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Latitude: "
+                />
+
+
+                <TextView
+                    android:id="@+id/latitudeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/longitudeInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Longitude: "
+                 />
+
+
+                <TextView
+                    android:id="@+id/longitudeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+            />
+        </LinearLayout>
 
 </LinearLayout>

@@ -8,6 +8,8 @@
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission. ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -19,27 +21,69 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="http"
+                    android:host="www.bikeridz.com" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="http"
+                    android:host="www.bikeridz.com"
+                    android:pathPattern="/turnbyturn" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="http"
+                    android:host="www.bikeridz.com"
+                    android:pathPattern="/selfiemarker" />
             </intent-filter>
         </activity>
-        <activity android:name=".FindBikeShopActivity" />
+        <activity android:name=".FindBikeShopActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="http"
+                    android:host="www.bikeridz.com"
+                    android:pathPattern="/findashop" />
+            </intent-filter>
+        </activity>
         <activity android:name=".WishlistActivity" />
         <activity
             android:name=".MapMyRideActivity"
-            android:label="@string/title_activity_map_my_ride" />
+            android:label="@string/title_activity_map_my_ride">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:scheme="http"
+                    android:host="www.bikeridz.com"
+                    android:pathPattern="/mapmyride" />
+            </intent-filter>
+        </activity>
         <activity android:name=".TurnByTurnActivity" />
         <activity android:name=".MySelfieMarkersActivity" />
-        <activity android:name=".BikeShopFileReader">
-
-            <!--
+        <activity
+            android:name=".LocationActivity"
+            android:label="@string/title_activity_location">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            -->
         </activity>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -51,6 +95,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+
     </application>
 
 </manifest>

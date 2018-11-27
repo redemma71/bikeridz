@@ -12,5 +12,6 @@
 
     <string name="findBikeShopHeader">Nearest Bike Shop</string>
     <string name="title_activity_map_my_ride">Map</string>
+    <string name="title_activity_location">LocationActivity</string>
 
 </resources>

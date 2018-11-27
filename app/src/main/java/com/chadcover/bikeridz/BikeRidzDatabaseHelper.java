@@ -48,7 +48,6 @@ public class BikeRidzDatabaseHelper extends SQLiteOpenHelper {
         Log.i("ONCREATE","created");
         setBikeShops(this.context);
         updateDatabase(db, 0, DB_VERSION);
-
     }
 
     @Override
