@@ -33,7 +33,7 @@ public class BikeRidzDatabaseHelper extends SQLiteOpenHelper {
     // constructors
     ///////////////////////////////////////////////////////////////////////////////////////////
 
-    BikeRidzDatabaseHelper(Context context) {
+    public BikeRidzDatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
         this.context = context;
     };
