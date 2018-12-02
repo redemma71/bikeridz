@@ -1,5 +1,11 @@
 apply plugin: 'com.android.application'
 
+def getApiKey() {
+    def props = new Properties()
+    file("mapquest.properties").withInputStream { props.load(it) }
+    return "\"" + props.getProperty("api_key") + "\""
+}
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -16,6 +22,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    applicationVariants.all { variant ->
+        variant.buildConfigField "String", "API_KEY", getApiKey() // Provides key for the Navigation SDK
+        variant.resValue "string", "API_KEY", getApiKey()         // Provides key for the MapView used in app layouts
+    }
+
 }
 
 dependencies {
@@ -27,4 +39,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // mapquest Android Navigation SDK
+    compile('com.mapquest:navigation:3.3.0')            // the MapQuest Navigation SDK
+    compile('com.mapzen.android:lost:3.0.4')            // used for GPS Location Acquisition (see notes)
+
+    compile('com.mapquest:mapping-android-sdk:2.0.1') { // for Mapping SDK MapView; displays route to navigate
+        exclude group: 'com.android.support'            // (note: in your app, you might omit this 'exclude')
+    }
+    compile('com.mapquest:searchahead:1.3.0')      // for the MapQuest "Search Ahead" feature (optional)
 }

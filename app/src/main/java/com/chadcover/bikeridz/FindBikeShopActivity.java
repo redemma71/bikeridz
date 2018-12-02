@@ -17,6 +17,11 @@ import android.widget.Toast;
 import com.chadcover.bikeridz.bikeshop.BikeShop;
 import com.google.maps.model.LatLng;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -182,7 +187,4 @@ public class FindBikeShopActivity extends Activity {
 
 
     }
-
-
-
 }
