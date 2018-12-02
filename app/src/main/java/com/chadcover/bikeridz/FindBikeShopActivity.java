@@ -82,7 +82,7 @@ public class FindBikeShopActivity extends Activity {
                         BikeRidzDBContract.BikeRidzContract.HOURS_SAT,
                         BikeRidzDBContract.BikeRidzContract.HOURS_SUN
                 },
-                    BikeRidzDBContract.BikeRidzContract.SHOP_NAME + " = ?", new String[] {queryStr}, null, null, null);
+                    "shop_name = ?", new String[] {queryStr}, null, null, null);
             SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(this,
                     android.R.layout.simple_list_item_1,
                     cursor,
