@@ -21,42 +21,52 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
-                    android:scheme="http"
-                    android:host="www.bikeridz.com" />
+                    android:host="www.bikeridz.com"
+                    android:scheme="http" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
-                    android:scheme="http"
                     android:host="www.bikeridz.com"
-                    android:pathPattern="/turnbyturn" />
+                    android:pathPattern="/turnbyturn"
+                    android:scheme="http" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
-                    android:scheme="http"
                     android:host="www.bikeridz.com"
-                    android:pathPattern="/selfiemarker" />
+                    android:pathPattern="/selfiemarker"
+                    android:scheme="http" />
             </intent-filter>
         </activity>
         <activity android:name=".FindBikeShopActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
-                    android:scheme="http"
                     android:host="www.bikeridz.com"
-                    android:pathPattern="/findashop" />
+                    android:pathPattern="/findashop"
+                    android:scheme="http" />
             </intent-filter>
         </activity>
         <activity android:name=".WishlistActivity" />
@@ -65,12 +75,14 @@
             android:label="@string/title_activity_map_my_ride">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
-                    android:scheme="http"
                     android:host="www.bikeridz.com"
-                    android:pathPattern="/mapmyride" />
+                    android:pathPattern="/mapmyride"
+                    android:scheme="http" />
             </intent-filter>
         </activity>
         <activity android:name=".TurnByTurnActivity" />
@@ -78,10 +90,6 @@
         <activity
             android:name=".LocationActivity"
             android:label="@string/title_activity_location">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <!--

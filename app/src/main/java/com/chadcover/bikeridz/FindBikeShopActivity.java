@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +28,7 @@ public class FindBikeShopActivity extends Activity {
     private Cursor cursor;
     private String todaysHours;
     private String queryStr;
+
 
     ///////////////////////////////////////////////////////////////////////////////////////////
     // required overrides
@@ -121,7 +123,8 @@ public class FindBikeShopActivity extends Activity {
                 description.setText(addressStr);
 
                 TextView phone = (TextView) findViewById(R.id.bikeShopPhoneNumber);
-                phone.setText(phoneNumberStr);
+                String phoneNumberFormatted = phoneNumberStr.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1)$2-$3");
+                phone.setText(phoneNumberFormatted);
 
                 TextView hours = (TextView) findViewById(R.id.bikeShopHours);
                 hours.setText("Today's Hours: " + todaysHours);
@@ -147,6 +150,14 @@ public class FindBikeShopActivity extends Activity {
         ///////////////////////////////////////////////////////////////////////////////////////////
         // helper methods
         ///////////////////////////////////////////////////////////////////////////////////////////
+
+    public void onMapMyRouteClick(View v) {
+        Log.i("ONMAPMYREOUTECLICK","clicked");
+    }
+
+    public void onTurnByTurnClick(View v) {
+        Log.i("ONTURNBYTURNCLICK", "clicked");
+    }
 
 
 
