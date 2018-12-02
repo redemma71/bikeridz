@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chadcover.bikeridz.bikeshop.BikeShop;
+import com.google.maps.model.LatLng;
 
 import java.util.Calendar;
 import java.util.List;
@@ -28,7 +30,8 @@ public class FindBikeShopActivity extends Activity {
     private Cursor cursor;
     private String todaysHours;
     private String queryStr;
-
+    private BikeShop nearestShop;
+    private LatLng latLng;
 
     ///////////////////////////////////////////////////////////////////////////////////////////
     // required overrides
@@ -46,10 +49,13 @@ public class FindBikeShopActivity extends Activity {
         Intent intent = getIntent();
         Double latitude = Double.parseDouble( intent.getStringExtra("latitude") );
         Double longitude = Double.parseDouble( intent.getStringExtra("longitude") );
+        this.latLng = new LatLng(latitude, longitude);
 
         FindNearestShop bikeShop = new FindNearestShop();
         List<BikeShop> nearestShops = bikeShop.getBikeShops(this);
-        queryStr = bikeShop.getClosestBikeshop(nearestShops, latitude, longitude);
+        queryStr = bikeShop.getClosestBikeshopName(nearestShops, latitude, longitude);
+        LatLng nearestLatLng = new LatLng(latitude, longitude);
+        nearestShop = bikeShop.getClosestBikeshop(nearestShops, nearestLatLng.lat, nearestLatLng.lng);
         Log.i("CLOSESTSHOP", queryStr);
 
         SQLiteOpenHelper bikeRidzDatabaseHelper = new BikeRidzDatabaseHelper(this);
@@ -153,10 +159,28 @@ public class FindBikeShopActivity extends Activity {
 
     public void onMapMyRouteClick(View v) {
         Log.i("ONMAPMYREOUTECLICK","clicked");
+        Log.i("MYLAT", Double.toString(this.latLng.lat));
+        Log.i("MYLNG", Double.toString(this.latLng.lng));
+        Log.i("DESTINATIONLAT", Double.toString(nearestShop.getCoords().getLat()));
+        Log.i("DESTINATIONLONG", Double.toString(nearestShop.getCoords().getLng()));
+
+        String mode = "&mode=b";
+        String avoid = "&avoid=ht";
+        Uri navigatorIntentUri = Uri.parse(String.format("google.navigation:q=%s,%s%s%s",
+                nearestShop.getCoords().getLat(), nearestShop.getCoords().getLng(), mode, avoid));
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, navigatorIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        if (mapIntent.resolveActivity(getPackageManager()) != null) { // make sure that there is an app that can handle the intent
+            startActivity(mapIntent);
+        }
+
+
     }
 
     public void onTurnByTurnClick(View v) {
         Log.i("ONTURNBYTURNCLICK", "clicked");
+
+
     }
 
 

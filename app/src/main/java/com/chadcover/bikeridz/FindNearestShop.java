@@ -40,7 +40,8 @@ public class FindNearestShop {
         return bikeShops;
     }
 
-    public String getClosestBikeshop(List<BikeShop> bikeShops,
+
+    public String getClosestBikeshopName(List<BikeShop> bikeShops,
                                      double myLatitude, double myLongitude) {
 
         double distanceToClosestShop = 4242;
@@ -64,7 +65,8 @@ public class FindNearestShop {
         return closestShop;
     }
 
-    public BikeShop getClosestBikeshop(List<BikeShop> bikeShops, double myLatitude, double myLongitude, boolean isABikeShop) {
+
+    public BikeShop getClosestBikeshop(List<BikeShop> bikeShops, double myLatitude, double myLongitude) {
         double distanceToClosestShop = 4242;
         String closestShop = "Race Pace Cycles";
 

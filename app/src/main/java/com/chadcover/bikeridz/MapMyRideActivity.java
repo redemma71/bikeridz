@@ -39,7 +39,7 @@ public class MapMyRideActivity extends FragmentActivity implements OnMapReadyCal
         // find the nearest bikeshop
         FindNearestShop bikeShop = new FindNearestShop();
         List<BikeShop> allBikeShops = bikeShop.getBikeShops(this);
-        BikeShop nearestShop = bikeShop.getClosestBikeshop(allBikeShops, latitude, longitude, true);
+        BikeShop nearestShop = bikeShop.getClosestBikeshop(allBikeShops, latitude, longitude);
 
         String mode = "&mode=b";
         String avoid = "&avoid=ht";

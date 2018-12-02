@@ -54,6 +54,7 @@ public class MainActivity extends Activity
             locationManager =  (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 0, this);
 
+
         } catch (Exception e) {
             Log.i("LOCATIONMANAGER", "Error creating location service: " + e.getMessage());
         }
