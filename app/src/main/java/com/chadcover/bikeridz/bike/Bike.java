@@ -1,6 +1,7 @@
 package com.chadcover.bikeridz.bike;
 
-import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Chad David Cover
@@ -14,19 +15,22 @@ public class Bike extends Part {
     private String height;
     private String material;
     private BikeType type;
-    private Part[] partsInventory;
 
     public Bike() {
+        super("Schwinn");
         this.color = "Tour de France Yellow";
         this.height = "59cm";
-        this.material = "carbon";
+        this.material = "Carbon";
         this.type = BikeType.ROAD;
-        this.partsInventory = new Part[100];
-        for (int i = 0; i < partsInventory.length; i++) {
-            this.partsInventory[i] = null;
-        }
     }
 
+    public Bike(String manufacturer, String color, String height, String material, BikeType type) {
+        super(manufacturer);
+        this.color = color;
+        this.height = height;
+        this.material = material;
+        this.type = type;
+    }
 
     public String getColor() {
         return color;
@@ -52,30 +56,31 @@ public class Bike extends Part {
         this.material = material;
     }
 
-    public BikeType getType() {
-        return type;
+    public String getType() {
+        return type.getTypeName();
     }
 
     public void setType(BikeType type) {
         this.type = type;
     }
 
-    public Part[] getPartsInventory() {
-        return partsInventory;
-    }
 
-    public void setPartsInventory(Part[] partsInventory) {
-        this.partsInventory = partsInventory;
-    }
+    ///////////////////////////////////////////////////////////////////////////////////////////
+    // helper method to create sample product list
+    ///////////////////////////////////////////////////////////////////////////////////////////
 
-    // helper functions
-    public void addToInventory(Part[] inventory, Part part) {
-        for (int i = 0; i < inventory.length; i++) {
-            if (inventory[i] == null) {
-                inventory[i] = part;
-                break;
-            }
-        }
+    public List<Bike> addSampleBikes() {
+
+        Bike bike1 = new Bike("IRO", "Black", "58cm",
+                "Steel", BikeType.COMMUTER);
+        Bike bike2 = new Bike("Litespeed", "Polished Steel", "60cm",
+                "Titanium", BikeType.ROAD);
+
+        List<Bike> bikes = new ArrayList<>();
+        bikes.add(bike1);
+        bikes.add(bike2);
+
+        return bikes;
     }
 
 }

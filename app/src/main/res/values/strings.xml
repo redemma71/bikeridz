@@ -3,19 +3,23 @@
     <string name="app_name">Bike Ridz</string>
     <string name="bikeRidzLogo">Bike Ridz logo</string>
     <string-array name="utilities">
-        <item>Find a Bikeshop</item>
-        <item>My Wishlist</item>
-        <item>Map My Ride</item>
-        <item>My Turn-by-Turn</item>
-        <item>My Selfie Markers</item>
+        <item>Find Nearest Bikeshop</item>
+        <item>Map My Route</item>
+        <item>Turn-by-Turn Cues</item>
+        <item>My Bike Wishlists</item>
     </string-array>
 
     <string name="findBikeShopHeader">Nearest Bike Shop</string>
-    <string name="title_activity_map_my_ride">Map</string>
-    <string name="title_activity_location">Location Activity</string>
+    <string name="title_activity_map_my_route">Map My Route</string>
+    <string name="title_activity_turn_by_turn">Turn-by-Turn Cues</string>
+    <string name="title_activity_nearest_bikeshop">Find Nearest Bikeshop</string>
+    <string name="title_activity_bike_wishlists">My Bike Wishlists</string>
     <string name="google_directions_key" templateMergeStrategy="preserve" translatable="false">AIzaSyA215-yc2QcwFY3RPLCkYLFe8IXXvqMiM8</string>
 
     <string name="mapMyRideUnderline"><u>Map My Route</u></string>
     <string name="turnByTurnUnderline"><u>Turn by Turn Directions</u></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

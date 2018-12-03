@@ -1,21 +1,20 @@
 package com.chadcover.bikeridz.wishlist;
 
 import com.chadcover.bikeridz.bike.Part;
+
+import java.util.List;
+
 import static android.util.Half.NaN;
 
 public class Wishlist {
 
     private int bikeId;
     private int itemId;
-    private Part[] items;
+    private List<Part> items;
 
     public Wishlist() {
         this.bikeId = NaN;
-        this.items = new Part[100];
-        for (int i = 0; i < items.length; i++) {
-            this.items[i] = null;
-        }
-
+        items.add(new Part());
     }
 
     public int getBikeId() {
@@ -26,24 +25,18 @@ public class Wishlist {
         this.bikeId = bikeId;
     }
 
-    public Part[] getItems() {
+    public List<Part> getItems() {
         return items;
     }
 
-    public void setItems(Part[] items) {
+    public void setItems(List<Part> items) {
         this.items = items;
     }
 
     // helper functions
 
-    public void addToWishlist(Part[] wishlist, Part part) {
-        // TODO: implement logic to handle full inventory (100 items) and to groom array on delete
-        for (int i = 0; i < wishlist.length; i++ ) {
-            if (wishlist[i] == null) {
-                wishlist[i] = part;
-                break;
-            }
-        }
+    public void addToWishlist(List<Part> wishlist, Part part) {
+        wishlist.add(part);
     }
 
 

@@ -75,24 +75,20 @@ public class MainActivity extends Activity
                         startActivity(intentFindBikeShop);
                         break;
                     case 1:
-                        Intent intentBikeInventory = new Intent(MainActivity.this, WishlistActivity.class);
-                        startActivity(intentBikeInventory);
-                        break;
-                    case 2:
                         Intent intentMapMyRide = new Intent(MainActivity.this, MapMyRideActivity.class);
                         intentMapMyRide.putExtra("latitude",latitude);
                         intentMapMyRide.putExtra("longitude",longitude);
                         startActivity(intentMapMyRide);
                         break;
-                    case 3:
+                    case 2:
                         Intent intentTurnByTurn = new Intent(MainActivity.this, TurnByTurnActivity.class);
                         intentTurnByTurn.putExtra("latitude",latitude);
                         intentTurnByTurn.putExtra("longitude",longitude);
                         startActivity(intentTurnByTurn);
                         break;
-                    case 4:
-                        Intent intentMySelfieMarkers = new Intent(MainActivity.this, MySelfieMarkersActivity.class);
-                        startActivity(intentMySelfieMarkers);
+                    case 3:
+                        Intent intentBikeInventory = new Intent(MainActivity.this, WishlistActivity.class);
+                        startActivity(intentBikeInventory);
                         break;
                 }
             }

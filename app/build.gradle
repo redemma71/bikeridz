@@ -9,11 +9,12 @@ repositories {
 }
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 26
     defaultConfig {
         applicationId "com.chadcover.bikeridz"
-        minSdkVersion 18
-        targetSdkVersion 28
+        minSdkVersion 21
+        targetSdkVersion 26
+        multiDexEnabled true
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -24,12 +25,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     applicationVariants.all { variant ->
         variant.buildConfigField "String", "API_KEY", getApiKey() // Provides key for the Navigation SDK
         variant.resValue "string", "API_KEY", getApiKey()         // Provides key for the MapView used in app layouts
     }
-
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -50,6 +52,8 @@ dependencies {
         exclude group: 'com.android.support'
     }
     implementation('com.mapquest:searchahead:1.3.0')      // for the MapQuest "Search Ahead" feature (optional)
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.android.support:design:26.1.0'
 }
 
 def getApiKey() {

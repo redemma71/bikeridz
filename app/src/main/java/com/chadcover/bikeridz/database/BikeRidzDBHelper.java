@@ -30,7 +30,6 @@ public class BikeRidzDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.i("ONCREATE-DBHELPER", "created");
         db.execSQL(BikeRidzDBContract.CREATE_BIKERIDZ_TABLE);
         setBikeShops(this.context);
         updateDatabase(db, 0, BikeRidzDBContract.DB_VERSION);
@@ -83,7 +82,6 @@ public class BikeRidzDBHelper extends SQLiteOpenHelper {
             ListIterator<BikeShop> mBikeShopsItr = mBikeShops.listIterator();
             while ( mBikeShopsItr.hasNext()) {
                 BikeShop shop = mBikeShopsItr.next();
-                Log.i("MD BIKESHOP", shop.getName());
                 Address address = shop.getAddress();
                 Coords coords = shop.getCoords();
                 Hours hours = shop.getHours();

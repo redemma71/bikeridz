@@ -18,7 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -56,7 +58,9 @@
                     android:scheme="http" />
             </intent-filter>
         </activity>
-        <activity android:name=".FindBikeShopActivity">
+        <activity
+            android:name=".FindBikeShopActivity"
+            android:label="@string/title_activity_nearest_bikeshop">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -69,10 +73,15 @@
                     android:scheme="http" />
             </intent-filter>
         </activity>
-        <activity android:name=".WishlistActivity" />
+        <activity
+            android:name=".WishlistActivity"
+            android:label="@string/title_activity_bike_wishlists"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
             android:name=".MapMyRideActivity"
-            android:label="@string/title_activity_map_my_ride">
+            android:label="@string/title_activity_map_my_route">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -85,12 +94,9 @@
                     android:scheme="http" />
             </intent-filter>
         </activity>
-        <activity android:name=".TurnByTurnActivity" />
-        <activity android:name=".MySelfieMarkersActivity" />
         <activity
-            android:name=".LocationActivity"
-            android:label="@string/title_activity_location">
-        </activity>
+            android:name=".TurnByTurnActivity"
+            android:label="@string/title_activity_turn_by_turn" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -104,6 +110,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
+        <activity android:name=".BikesListFragment"></activity>
     </application>
 
 </manifest>

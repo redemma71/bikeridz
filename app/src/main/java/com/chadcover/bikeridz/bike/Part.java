@@ -2,27 +2,35 @@ package com.chadcover.bikeridz.bike;
 
 public class Part {
 
+    private String name;
+    private String description;
+    private double price;
+    private int quantity;
+    private String manufacturer;
+    private PartType typeOfPart;
+
     public Part() {
         this.name = "new part";
         this.description = "new description";
         this.price = 42.42;
         this.quantity = 1;
         this.manufacturer = "Huffy";
+        this.typeOfPart = PartType.BIKE;
     }
 
-    public Part(String name, String description, double price, int quantity, String manufacturer) {
+    public Part(String name, String description, double price, int quantity, String manufacturer, PartType partType) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.quantity = quantity;
         this.manufacturer = manufacturer;
+        this.typeOfPart = partType;
     }
 
-    private String name;
-    private String description;
-    private double price;
-    private int quantity;
-    private String manufacturer;
+    public Part(String manufacturer) {
+        this.manufacturer = manufacturer;
+    }
+
 
     public String getName() {
         return name;
@@ -62,6 +70,14 @@ public class Part {
 
     public void setManufacturer(String manufacturer) {
         this.manufacturer = manufacturer;
+    }
+
+    public PartType getTypeOfPart() {
+        return typeOfPart;
+    }
+
+    public void setTypeOfPart(PartType typeOfPart) {
+        this.typeOfPart = typeOfPart;
     }
 
 }

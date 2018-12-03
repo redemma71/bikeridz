@@ -1,0 +1,7 @@
+<resources>
+    <string name="bike_label">Bicycle:</string>
+    <string name="bike_color">Color:</string>
+    <string name="bike_height">Height:</string>
+    <string name="bike_material">Material:</string>
+    <string name="bike_type">Type:</string>
+</resources>
