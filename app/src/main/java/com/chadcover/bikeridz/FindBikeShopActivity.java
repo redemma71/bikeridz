@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.chadcover.bikeridz.bikeshop.BikeShop;
+import com.chadcover.bikeridz.database.BikeRidzDBContract;
+import com.chadcover.bikeridz.database.BikeRidzDBHelper;
 import com.google.maps.model.LatLng;
 
 import org.w3c.dom.Document;
@@ -63,21 +65,47 @@ public class FindBikeShopActivity extends Activity {
         nearestShop = bikeShop.getClosestBikeshop(nearestShops, nearestLatLng.lat, nearestLatLng.lng);
         Log.i("CLOSESTSHOP", queryStr);
 
-        SQLiteOpenHelper bikeRidzDatabaseHelper = new BikeRidzDatabaseHelper(this);
+        // SQLiteOpenHelper bikeRidzDatabaseHelper = new BikeRidzDatabaseHelper(this);
+        SQLiteOpenHelper bikeRidzDBHelper = new BikeRidzDBHelper(this);
         try {
-            db = bikeRidzDatabaseHelper.getReadableDatabase();
+            // db = bikeRidzDatabaseHelper.getReadableDatabase();
+            db = bikeRidzDBHelper.getReadableDatabase();
             cursor = db.query(
-                "BIKESHOP",
-                new String[] {"_id", "Name", "FullAddress", "PhoneNumber", "Latitude", "Longitude",
-                        "HoursMon", "HoursTues", "HoursWed", "HoursThurs",
-                        "HoursFri", "HoursSat", "HoursSun"},
-                "Name = ?", new String[] {queryStr}, null, null, null);
+                    BikeRidzDBContract.BikeRidzContract.TABLE_NAME,
+                new String[] {
+                        BikeRidzDBContract.BikeRidzContract.SHOP_ID,
+                        BikeRidzDBContract.BikeRidzContract.SHOP_NAME,
+                        BikeRidzDBContract.BikeRidzContract.FULL_ADDRESS,
+                        BikeRidzDBContract.BikeRidzContract.PHONE_NUMBER,
+                        BikeRidzDBContract.BikeRidzContract.LATITUDE,
+                        BikeRidzDBContract.BikeRidzContract.LONGITUDE,
+                        BikeRidzDBContract.BikeRidzContract.HOURS_MON,
+                        BikeRidzDBContract.BikeRidzContract.HOURS_TUES,
+                        BikeRidzDBContract.BikeRidzContract.HOURS_WED,
+                        BikeRidzDBContract.BikeRidzContract.HOURS_THURS,
+                        BikeRidzDBContract.BikeRidzContract.HOURS_FRI,
+                        BikeRidzDBContract.BikeRidzContract.HOURS_SAT,
+                        BikeRidzDBContract.BikeRidzContract.HOURS_SUN
+                },
+                    "shop_name = ?", new String[] {queryStr}, null, null, null);
             SimpleCursorAdapter listAdapter = new SimpleCursorAdapter(this,
                     android.R.layout.simple_list_item_1,
                     cursor,
-                    new String[] {"Name", "FullAddress", "PhoneNumber", "Latitude", "Longitude",
-                            "HoursMon", "HoursTues", "HoursWed", "HoursThurs",
-                            "HoursFri", "HoursSat", "HoursSun"},
+                    new String[] {
+                            BikeRidzDBContract.BikeRidzContract.SHOP_ID,
+                            BikeRidzDBContract.BikeRidzContract.SHOP_NAME,
+                            BikeRidzDBContract.BikeRidzContract.FULL_ADDRESS,
+                            BikeRidzDBContract.BikeRidzContract.PHONE_NUMBER,
+                            BikeRidzDBContract.BikeRidzContract.LATITUDE,
+                            BikeRidzDBContract.BikeRidzContract.LONGITUDE,
+                            BikeRidzDBContract.BikeRidzContract.HOURS_MON,
+                            BikeRidzDBContract.BikeRidzContract.HOURS_TUES,
+                            BikeRidzDBContract.BikeRidzContract.HOURS_WED,
+                            BikeRidzDBContract.BikeRidzContract.HOURS_THURS,
+                            BikeRidzDBContract.BikeRidzContract.HOURS_FRI,
+                            BikeRidzDBContract.BikeRidzContract.HOURS_SAT,
+                            BikeRidzDBContract.BikeRidzContract.HOURS_SUN
+                    },
                     new int[] {android.R.id.text1},
                     0
                     );
