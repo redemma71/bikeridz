@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.chadcover.bikeridz.BikeRidzDatabaseHelper;
 import com.chadcover.bikeridz.bikeshop.Address;
 import com.chadcover.bikeridz.bikeshop.BikeShop;
 import com.chadcover.bikeridz.bikeshop.Coords;
@@ -16,7 +15,7 @@ import java.util.List;
 
 public class BikeRidzDao {
     protected static BikeRidzDao instance;
-    protected BikeRidzDatabaseHelper bikeRidzDatabaseHelper;
+    protected BikeRidzDBHelper bikeRidzDBHelper;
     protected SQLiteDatabase mReadableDB, mWritableDB;
     protected String[] projection = {
         BikeRidzDBContract.BikeRidzContract.SHOP_ID,
@@ -42,12 +41,12 @@ public class BikeRidzDao {
 
 
     public BikeRidzDao(Context context) {
-        bikeRidzDatabaseHelper = new BikeRidzDatabaseHelper(context);
+        bikeRidzDBHelper = new BikeRidzDBHelper(context);
      }
 
      public void openDB() {
-        mReadableDB = bikeRidzDatabaseHelper.getReadableDatabase();
-        mWritableDB = bikeRidzDatabaseHelper.getWritableDatabase();
+        mReadableDB = bikeRidzDBHelper.getReadableDatabase();
+        mWritableDB = bikeRidzDBHelper.getWritableDatabase();
      }
 
      public void closeDB() {
