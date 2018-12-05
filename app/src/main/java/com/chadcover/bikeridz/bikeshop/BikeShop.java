@@ -18,7 +18,6 @@ public class BikeShop {
     }
 
     public String getName() {
-
         return name;
     }
 

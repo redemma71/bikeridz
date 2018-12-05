@@ -1,7 +1,5 @@
 package com.chadcover.bikeridz;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -12,19 +10,12 @@ import com.chadcover.bikeridz.bike.Bike;
 import com.chadcover.bikeridz.bike.BikeType;
 
 
-public class WishlistActivity extends AppCompatActivity {
+public class BikeInventoryActivity extends AppCompatActivity implements BikesListAdapter.Listener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wishlist);
-
-        Bike testBike = new Bike();
-        testBike.setName("IRO");
-        testBike.setType(BikeType.COMMUTER);
-        testBike.setHeight("59cm");
-        testBike.setColor("Black");
-        testBike.setMaterial("Steel");
+        setContentView(R.layout.activity_bike_inventory);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -33,13 +24,19 @@ public class WishlistActivity extends AppCompatActivity {
         fab.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // TODO: implement addprojectactivity
                 //Intent intent = new Intent(view.getContext(), AddProjectActivity.class);
                 //startActivity(intent);
                 Log.i("FAB","ulous!");
             }
         });
-
-
-
     }
+
+
+    @Override
+    public void onClick(int id, int position) {
+        Log.i("BIKELISTADAPATERLISTENER", "fired!");
+        // TODO: implement bike list details here
+    }
+
 }

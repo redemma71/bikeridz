@@ -5,9 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.chadcover.bikeridz.WishlistActivity"
+    tools:context="com.chadcover.bikeridz.BikeInventoryActivity"
     >
-
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -23,12 +22,22 @@
             app:popupTheme="@style/AppTheme.PopupOverlay"
             android:layout_width="match_parent"
             android:gravity="center_horizontal"
-            >
+        >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/title_activity_bike_inventory"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:layout_marginBottom="15dp"
+                />
+
         </android.support.v7.widget.Toolbar>
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/fragment_content_wishlist" />
+    <include layout="@layout/fragment_content_inventory" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -36,9 +45,14 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
+        app:srcCompat="@android:drawable/ic_input_add"
     />
 
-
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_activity_bike_inventory" />
 
 </android.support.design.widget.CoordinatorLayout>
 

@@ -3,9 +3,10 @@ package com.chadcover.bikeridz;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-public class TurnByTurnActivity extends Activity {
+public class TurnByTurnActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

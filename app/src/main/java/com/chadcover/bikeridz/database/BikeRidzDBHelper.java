@@ -38,6 +38,7 @@ public class BikeRidzDBHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion ) {
         db.execSQL(BikeRidzDBContract.DROP_PROJECT_TABLE);
+        onCreate(db);
     }
 
 

@@ -8,6 +8,10 @@ public enum BikeType {
 
         private String typeName;
 
+        BikeType() {
+           // empty constructor
+        }
+
         BikeType(String name) {
             this.typeName = name;
         }

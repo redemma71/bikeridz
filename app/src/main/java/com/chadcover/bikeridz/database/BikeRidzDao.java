@@ -199,7 +199,7 @@ public class BikeRidzDao {
             bikeShop.setHours(bikeShopHours);
             bikeShops.add(bikeShop);
         }
-
+        cursor.close();
         return bikeShops;
     }
 

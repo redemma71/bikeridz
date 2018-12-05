@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.SimpleCursorAdapter;
@@ -27,7 +28,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class FindBikeShopActivity extends Activity {
+public class FindBikeShopActivity extends AppCompatActivity {
 
     ///////////////////////////////////////////////////////////////////////////////////////////
     // member variables
@@ -65,7 +66,6 @@ public class FindBikeShopActivity extends Activity {
         nearestShop = bikeShop.getClosestBikeshop(nearestShops, nearestLatLng.lat, nearestLatLng.lng);
         Log.i("CLOSESTSHOP", queryStr);
 
-        // SQLiteOpenHelper bikeRidzDatabaseHelper = new BikeRidzDatabaseHelper(this);
         SQLiteOpenHelper bikeRidzDBHelper = new BikeRidzDBHelper(this);
         try {
             // db = bikeRidzDatabaseHelper.getReadableDatabase();

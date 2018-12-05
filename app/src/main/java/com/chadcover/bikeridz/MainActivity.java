@@ -1,7 +1,6 @@
 package com.chadcover.bikeridz;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -12,12 +11,13 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-public class MainActivity extends Activity
+public class MainActivity extends AppCompatActivity
         implements LocationListener, ActivityCompat.OnRequestPermissionsResultCallback  {
 
     ///////////////////////////////////////////////////////////////////////////////////////////
@@ -87,7 +87,7 @@ public class MainActivity extends Activity
                         startActivity(intentTurnByTurn);
                         break;
                     case 3:
-                        Intent intentBikeInventory = new Intent(MainActivity.this, WishlistActivity.class);
+                        Intent intentBikeInventory = new Intent(MainActivity.this, BikeInventoryActivity.class);
                         startActivity(intentBikeInventory);
                         break;
                 }

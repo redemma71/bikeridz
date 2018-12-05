@@ -14,6 +14,10 @@ public enum PartType {
 
     private String partName;
 
+    PartType() {
+        // empty constructor
+    }
+
     PartType(String name) {
         this.partName = name;
     }
