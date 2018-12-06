@@ -6,7 +6,7 @@ public class BikesDBContract {
 
     public static final class BikeContract {
         public static final String TABLE_NAME = "bikes";
-        public static final String BIKE_ID = "_id";
+        public static final String BIKE_ID = "bike_id";
         public static final String BIKE_NAME = "bike_name";
         public static final String BIKE_DESCRIPTION = "bike_description";
         public static final String BIKE_COLOR = "bike_color";

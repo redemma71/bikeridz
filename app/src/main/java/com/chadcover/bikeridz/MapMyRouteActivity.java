@@ -12,12 +12,12 @@ import com.google.android.gms.maps.SupportMapFragment;
 import java.util.List;
 
 
-public class MapMyRideActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapMyRouteActivity extends FragmentActivity implements OnMapReadyCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map_my_ride);
+        setContentView(R.layout.activity_map_my_route);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);

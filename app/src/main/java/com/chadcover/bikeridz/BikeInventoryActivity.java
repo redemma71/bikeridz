@@ -1,13 +1,12 @@
 package com.chadcover.bikeridz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
-import com.chadcover.bikeridz.bike.Bike;
-import com.chadcover.bikeridz.bike.BikeType;
 
 
 public class BikeInventoryActivity extends AppCompatActivity implements BikesListAdapter.Listener {
@@ -27,16 +26,24 @@ public class BikeInventoryActivity extends AppCompatActivity implements BikesLis
                 // TODO: implement addprojectactivity
                 //Intent intent = new Intent(view.getContext(), AddProjectActivity.class);
                 //startActivity(intent);
-                Log.i("FAB","ulous!");
+                Log.i("FAB","onClickListener()");
             }
         });
     }
 
-
     @Override
     public void onClick(int id, int position) {
-        Log.i("BIKELISTADAPATERLISTENER", "fired!");
-        // TODO: implement bike list details here
+        BikeDetailsFragment detailsFragment =
+                (BikeDetailsFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentBikeDetails);
+            if (detailsFragment != null) {
+                detailsFragment.setBike(id);
+            } else {
+                Intent intent = new Intent(this, BikeDetailActivity.class);
+                intent.putExtra("bikeId", id);
+                intent.putExtra("nextBikeId", position);
+                startActivity(intent);
+            }
     }
-
 }
+
+

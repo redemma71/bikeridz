@@ -29,8 +29,6 @@ public class BikesListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        Log.i("BIKESLISTFRAGMENT","onCreateView called");
-
         View v = inflater.inflate(R.layout.fragment_bikes_list, container, false);
         RecyclerView bikesListRecyclerView = (RecyclerView) (v.findViewById(R.id.bikelist_recyclerview));
 
@@ -39,11 +37,6 @@ public class BikesListFragment extends Fragment {
 
         List<Bike> bikes;
         bikes = bikesDao.getAllBikes();
-        Log.i("BIKESLISTSIZE",Integer.toString(bikes.size()));
-
-        if (bikes.iterator().hasNext()) {
-            Log.i("BIKECREATED", bikes.iterator().next().toString());
-        }
 
         BikesListAdapter bikesListAdapter = new BikesListAdapter(bikes);
         bikesListRecyclerView.setAdapter(bikesListAdapter);

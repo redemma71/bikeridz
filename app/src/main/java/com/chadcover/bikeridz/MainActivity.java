@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity
                         startActivity(intentFindBikeShop);
                         break;
                     case 1:
-                        Intent intentMapMyRide = new Intent(MainActivity.this, MapMyRideActivity.class);
+                        Intent intentMapMyRide = new Intent(MainActivity.this, MapMyRouteActivity.class);
                         intentMapMyRide.putExtra("latitude",latitude);
                         intentMapMyRide.putExtra("longitude",longitude);
                         startActivity(intentMapMyRide);

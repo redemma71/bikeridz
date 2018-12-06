@@ -40,10 +40,11 @@ public class BikesDBHelper extends SQLiteOpenHelper {
     // helper methods
     ///////////////////////////////////////////////////////////////////////////////////////////
 
-    public static void insertBike(SQLiteDatabase db, String bikeName, String bikeDescription,
+    public static void insertBike(SQLiteDatabase db, int bikeId, String bikeName, String bikeDescription,
                                       String bikeColor, String bikeHeight, String bikeMaterial,
                                       String bikeType, String bikeManufacturer, String bikeSerialNumber) {
         ContentValues bikes = new ContentValues();
+        bikes.put(BikesDBContract.BikeContract.BIKE_ID, bikeId);
         bikes.put(BikesDBContract.BikeContract.BIKE_NAME, bikeName);
         bikes.put(BikesDBContract.BikeContract.BIKE_DESCRIPTION, bikeDescription);
         bikes.put(BikesDBContract.BikeContract.BIKE_COLOR, bikeColor);
@@ -65,7 +66,7 @@ public class BikesDBHelper extends SQLiteOpenHelper {
             while ( mBikesItr.hasNext()) {
                 Bike bike = mBikesItr.next();
 
-                insertBike(db, bike.getName(), bike.getDescription(), bike.getColor(), bike.getHeight(),
+                insertBike(db, bike.getId(), bike.getName(), bike.getDescription(), bike.getColor(), bike.getHeight(),
                         bike.getMaterial(), bike.getTypeName(), bike.getManufacturer(), bike.getSerialNumber());
             }
         }

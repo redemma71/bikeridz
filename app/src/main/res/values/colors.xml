@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="webLink">#0E8A77</color>
+    <color name="darkGray">#A9A9A9</color>
+    <color name="lightGray">#D3D3D3</color>
 </resources>

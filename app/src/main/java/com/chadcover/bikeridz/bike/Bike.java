@@ -106,9 +106,9 @@ public class Bike extends Part {
 
     public static List<Bike> createSampleBikes() {
 
-        Bike bike1 = new Bike(1, "Work Bike", "My ride-to-work bike, a single-speed.","IRO", "Black", "58cm",
+        Bike bike1 = new Bike(0, "Work Bike", "My ride-to-work bike, a single-speed.","IRO", "Black", "58cm",
                 "Steel", BikeType.COMMUTER, "XXXXXXXXXXXXXXX");
-        Bike bike2 = new Bike(2, "Joy-Ride Bike", "My ride-all-day bike", "Litespeed", "Polished Steel", "60cm",
+        Bike bike2 = new Bike(1, "Joy Ride", "My ride-all-day bike", "Litespeed", "Polished Steel", "60cm",
                 "Titanium", BikeType.ROAD, "YYYYYYYYYYYYYYY");
 
         List<Bike> bikes = new ArrayList<>();

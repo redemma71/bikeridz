@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 /**
  *
  */
-public class ContentWishlistFragment extends Fragment {
+public class ContentInventoryFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -24,7 +24,7 @@ public class ContentWishlistFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public ContentWishlistFragment() {
+    public ContentInventoryFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +37,8 @@ public class ContentWishlistFragment extends Fragment {
      * @return A new instance of fragment content_wishlist_fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ContentWishlistFragment newInstance(String param1, String param2) {
-        ContentWishlistFragment fragment = new ContentWishlistFragment();
+    public static ContentInventoryFragment newInstance(String param1, String param2) {
+        ContentInventoryFragment fragment = new ContentInventoryFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

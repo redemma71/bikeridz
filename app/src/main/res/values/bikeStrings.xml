@@ -2,6 +2,8 @@
     <string name="bike_label">Bicycle:</string>
     <string name="bike_color">Color:</string>
     <string name="bike_height">Height:</string>
-    <string name="bike_material">Material:</string>
-    <string name="bike_type">Type:</string>
+    <string name="bike_material">Frame Material:</string>
+    <string name="bike_type">Type of Bike:</string>
+    <string name="bike_description">Description:</string>
+    <string name="bike_manufacturer">Manufacturer:</string>
 </resources>

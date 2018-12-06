@@ -13,6 +13,7 @@ import java.util.List;
 
 public class BikesDao {
     protected static BikesDao instance;
+    protected static Context context;
     protected BikesDBHelper bikesDBHelper;
     protected SQLiteDatabase mReadableDB, mWritableDB;
     protected String[] projection = {
@@ -34,6 +35,9 @@ public class BikesDao {
     public BikesDao(Context context) {
         bikesDBHelper = new BikesDBHelper(context);
      }
+    public BikesDao() {
+        bikesDBHelper = new BikesDBHelper(context);
+    }
 
      public void openDB() {
         mReadableDB = bikesDBHelper.getReadableDatabase();
@@ -54,6 +58,8 @@ public class BikesDao {
 
      public long insertBike(Bike bike) {
         ContentValues bikeValue = new ContentValues();
+        bikeValue.put(BikesDBContract.BikeContract.BIKE_ID,
+                bike.getId());
         bikeValue.put(BikesDBContract.BikeContract.BIKE_NAME,
                 bike.getName());
         bikeValue.put(BikesDBContract.BikeContract.BIKE_DESCRIPTION,
@@ -139,15 +145,15 @@ public class BikesDao {
         String bikeDescription = cursor.getString(cursor.getColumnIndex(
                 BikesDBContract.BikeContract.BIKE_DESCRIPTION));
         String bikeColor = cursor.getString(cursor.getColumnIndex(
-                BikesDBContract.BikeContract.BIKE_DESCRIPTION));
+                BikesDBContract.BikeContract.BIKE_COLOR));
         String bikeHeight = cursor.getString(cursor.getColumnIndex(
-                BikesDBContract.BikeContract.BIKE_DESCRIPTION));
+                BikesDBContract.BikeContract.BIKE_HEIGHT));
         String bikeMaterial = cursor.getString(cursor.getColumnIndex(
-                BikesDBContract.BikeContract.BIKE_DESCRIPTION));
+                BikesDBContract.BikeContract.BIKE_MATERIAL));
         String bikeTypeStr = cursor.getString(cursor.getColumnIndex(
-                BikesDBContract.BikeContract.BIKE_DESCRIPTION));
+                BikesDBContract.BikeContract.BIKE_TYPE));
         String bikeManufacturer = cursor.getString(cursor.getColumnIndex(
-                BikesDBContract.BikeContract.BIKE_DESCRIPTION));
+                BikesDBContract.BikeContract.BIKE_MANUFACTURER));
         String bikeSerialNumber = cursor.getString(cursor.getColumnIndex(
                 BikesDBContract.BikeContract.BIKE_SERIAL_NUMBER));
 
@@ -156,12 +162,13 @@ public class BikesDao {
         /////////////////////////////////////////////////////////////////////
         // set and add bike
         Bike bike = new Bike();
+        bike.setId(bikeId);
         bike.setName(bikeName);
         bike.setDescription(bikeDescription);
         bike.setColor(bikeColor);
         bike.setHeight(bikeHeight);
         bike.setMaterial(bikeMaterial);
-        BikeType bikeType = BikeType.valueOf(bikeTypeStr);
+        BikeType bikeType = BikeType.valueOf(bikeTypeStr.toUpperCase());
         bike.setType(bikeType);
         bike.setManufacturer(bikeManufacturer);
         bike.setSerialNumber(bikeSerialNumber);
@@ -169,10 +176,14 @@ public class BikesDao {
         return bike;
     }
 
+
+    public int getNubmerOfBikes() {
+        List<Bike> bikes = this.getAllBikes();
+        return bikes.size();
+    }
+
     // TODO: implement getBikeShopByTitle. out of scope for release v1
     // TODO: implement updateBikeShopById. out of scope for release v1
-
-
-
-
 }
+
+
