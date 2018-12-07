@@ -16,19 +16,17 @@ import com.chadcover.bikeridz.bike.Part;
 import com.chadcover.bikeridz.database.PartsDao;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.List;
 import java.util.ListIterator;
 
 public class BikePartsFragment extends Fragment {
 
     protected int bikeId, position;
-    protected TextView partName, partDescription, partManufacturer;
 
     public BikePartsFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,6 +41,13 @@ public class BikePartsFragment extends Fragment {
             Log.i("BikePartsFragment", "bikeId: " + Integer.toString(bikeId));
             Log.i("BikePartsFragment", "position: " + Integer.toString(position));
         }
+
+        ArrayAdapter<String> arrayAdapter = setParts(bikeId);
+        listView.setAdapter(arrayAdapter);
+        return view;
+    }
+
+    public ArrayAdapter<String> setParts(int bikeId) {
 
         PartsDao partsDao = PartsDao.getInstance(getContext());
         partsDao.openDB();
@@ -69,9 +74,8 @@ public class BikePartsFragment extends Fragment {
                 textView.setTextColor(Color.BLACK);
                 return view;
             }
-
         };
-        listView.setAdapter(arrayAdapter);
-        return view;
+        return arrayAdapter;
     }
+
 }

@@ -33,16 +33,10 @@ public class BikeInventoryActivity extends AppCompatActivity implements BikesLis
 
     @Override
     public void onClick(int id, int position) {
-        BikeDetailsFragment detailsFragment =
-                (BikeDetailsFragment) getSupportFragmentManager().findFragmentById(R.id.fragmentBikeDetails);
-            if (detailsFragment != null) {
-                detailsFragment.setBike(id);
-            } else {
-                Intent intent = new Intent(this, BikeDetailActivity.class);
-                intent.putExtra("bikeId", id);
-                intent.putExtra("position", position);
-                startActivity(intent);
-            }
+        Intent intent = new Intent(this, BikeDetailActivity.class);
+        intent.putExtra("bikeId", id);
+        intent.putExtra("position", position);
+        startActivity(intent);
     }
 }
 

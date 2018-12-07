@@ -15,6 +15,7 @@ public class BikeDetailActivity extends AppCompatActivity {
     protected BikeDetailsFragment bikeDetailsFragment;
     protected BikePartsFragment bikePartsFragment;
     protected Context context;
+    protected int bikeId, position;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +46,6 @@ public class BikeDetailActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         bikesDao.closeDB();
-    }
-
-
-    // TODO: fix this listener; does not loop back to bike 0
-    public void onButtonClick(View view){
-        int id = bikeDetailsFragment.bikeId;
-        int position = bikeDetailsFragment.position;
-
-        BikesDao bikesDao = BikesDao.getInstance(this.context);
-        int numberOfBikes = bikesDao.getNubmerOfBikes();
-        bikeDetailsFragment.setBike(position);
     }
 
 }
