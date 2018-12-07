@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 /**
  *
  */
-public class ContentInventoryFragment extends Fragment {
+public class BikesInventoryFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -24,7 +24,7 @@ public class ContentInventoryFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public ContentInventoryFragment() {
+    public BikesInventoryFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +37,8 @@ public class ContentInventoryFragment extends Fragment {
      * @return A new instance of fragment content_wishlist_fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ContentInventoryFragment newInstance(String param1, String param2) {
-        ContentInventoryFragment fragment = new ContentInventoryFragment();
+    public static BikesInventoryFragment newInstance(String param1, String param2) {
+        BikesInventoryFragment fragment = new BikesInventoryFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,7 +59,7 @@ public class ContentInventoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_content_inventory, container, false);
+        return inflater.inflate(R.layout.fragment_bikes_inventory, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

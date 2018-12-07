@@ -1,3 +1,14 @@
 <resources>
-    <string name="parts_fragment_header">Parts Inventory</string>
+    <string name="parts_inventory_header">Parts Inventory</string>
+
+
+    <string-array name="parts_list">
+        <item>Brakes</item>
+        <item>Tires</item>
+        <item>Seat</item>
+        <item>Handlebars</item>
+    </string-array>
+
+
+
 </resources>

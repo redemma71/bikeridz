@@ -11,15 +11,14 @@
 
     <string name="findBikeShopHeader">Nearest Bike Shop</string>
     <string name="title_activity_map_my_route">Map My Route</string>
+    <string name="mapMyRideUnderline"><u>Map My Route</u></string>
     <string name="title_activity_turn_by_turn">Turn-by-Turn Cues</string>
+    <string name="turnByTurnUnderline"><u>Turn by Turn Cues</u></string>
     <string name="title_activity_nearest_bikeshop">Find Nearest Bikeshop</string>
     <string name="title_activity_bike_inventory">My Bike Inventory</string>
     <string name="google_directions_key" templateMergeStrategy="preserve" translatable="false">AIzaSyA215-yc2QcwFY3RPLCkYLFe8IXXvqMiM8</string>
 
-    <string name="mapMyRideUnderline"><u>Map My Route</u></string>
-    <string name="turnByTurnUnderline"><u>Turn by Turn Directions</u></string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

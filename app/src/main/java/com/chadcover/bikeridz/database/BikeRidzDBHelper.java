@@ -76,7 +76,7 @@ public class BikeRidzDBHelper extends SQLiteOpenHelper {
 
 
     public void updateDatabase(SQLiteDatabase db, int oldVersion, int newVersion) {
-        Log.i("DATABASE-VERSION", Integer.toString(oldVersion));
+        Log.d("BikeRidzDatabaseHelper", "updateDatabse(): oldVersion=" + Integer.toString(oldVersion));
 
         if (oldVersion < 1) {
             List<BikeShop> mBikeShops = getBikeShops();

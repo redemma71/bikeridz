@@ -2,15 +2,15 @@ package com.chadcover.bikeridz.bike;
 
 public enum PartType {
     BIKE("Bike"),
-    BRAKE("Brake"),
+    BRAKE("Brakes"),
     CHAIN("Chain"),
     CRANKSET("Crankset"),
     DEREILLEUR("Dereilleur"),
     FRAME("Frame"),
     HANDLEBARS("Handlebars"),
     SEAT("Seat"),
-    TIRE("Tire"),
-    WHEEL("Wheel");
+    TIRE("Tires"),
+    WHEEL("Wheels");
 
     private String partName;
 

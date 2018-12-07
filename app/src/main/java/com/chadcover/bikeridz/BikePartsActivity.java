@@ -30,10 +30,6 @@ public class BikePartsActivity extends AppCompatActivity {
         FragmentTransaction transaction = fragManager.beginTransaction();
         transaction.add(R.id.bikePartsFragment, bikePartsFragment);
         transaction.commit();
-
-        Intent intent = getIntent();
-        int bikeId = Integer.parseInt(intent.getStringExtra("bikeId"));
-        Log.i("YADDAINTENT", intent.getStringExtra("bikeId"));
     }
 
     @Override

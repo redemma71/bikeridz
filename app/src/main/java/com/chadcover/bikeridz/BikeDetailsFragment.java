@@ -15,7 +15,7 @@ import com.chadcover.bikeridz.database.BikesDao;
 
 public class BikeDetailsFragment extends Fragment {
 
-    protected int bikeId, nextBikeId;
+    protected int bikeId, position;
     protected TextView bikeNameView, bikeTypeView, bikeDescriptionView, bikeMaterialView,
             bikeHeightView, bikeManufacturerView;
 
@@ -44,6 +44,9 @@ public class BikeDetailsFragment extends Fragment {
 
         if (getArguments() != null) {
             bikeId = getArguments().getInt("bikeId");
+            position = getArguments().getInt("position");
+            Log.d("BikeDetailsFragment", "bikeId: " + Integer.toString(bikeId));
+            Log.d("BikeDetailsFragment", "position: " + Integer.toString(position));
         }
 
         setBike(bikeId);

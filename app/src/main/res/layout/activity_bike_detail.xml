@@ -20,12 +20,15 @@
           android:id="@+id/bikeDetailFragment"
        />
 
-
       <FrameLayout
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
+          android:layout_marginBottom="15dp"
           android:id="@+id/bikePartsFragment"
-       />
+          />
+
+      <!--<include layout="@layout/fragment_parts_inventory" />-->
+
    </LinearLayout>
 
    <Button
@@ -36,7 +39,7 @@
        android:layout_marginEnd="8dp"
        android:layout_marginStart="8dp"
        android:text="Next Bike"
-       android:onClick="onClick"
+       android:onClick="onButtonClick"
        app:layout_constraintBottom_toBottomOf="parent"
        app:layout_constraintEnd_toEndOf="parent"
        app:layout_constraintHorizontal_bias="0.0"

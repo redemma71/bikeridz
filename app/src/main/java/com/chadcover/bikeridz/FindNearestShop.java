@@ -41,31 +41,6 @@ public class FindNearestShop {
     }
 
 
-    public String getClosestBikeshopName(List<BikeShop> bikeShops,
-                                     double myLatitude, double myLongitude) {
-
-        double distanceToClosestShop = 4242;
-        String closestShop = "Race Pace Cycles";
-
-        ListIterator<BikeShop> bikeShopIter = bikeShops.listIterator();
-        while (bikeShopIter.hasNext()) {
-            BikeShop bikeShop = bikeShopIter.next();
-            Coords coords = bikeShop.getCoords();
-            String shopName = bikeShop.getName();
-            Double latitude = coords.getLat();
-            Double longitude = coords.getLng();
-
-            double distanceToShop = this.calculateHaversineDistance(myLatitude, myLongitude, latitude, longitude);
-            if (distanceToShop < distanceToClosestShop ) {
-                distanceToClosestShop = distanceToShop;
-                Log.i("CLOSESTSHOP", shopName);
-                closestShop = shopName;
-            }
-        }
-        return closestShop;
-    }
-
-
     public BikeShop getClosestBikeshop(List<BikeShop> bikeShops, double myLatitude, double myLongitude) {
         double distanceToClosestShop = 4242;
         String closestShop = "Race Pace Cycles";
@@ -85,7 +60,7 @@ public class FindNearestShop {
             double distanceToShop = this.calculateHaversineDistance(myLatitude, myLongitude, latitude, longitude);
             if (distanceToShop < distanceToClosestShop ) {
                 distanceToClosestShop = distanceToShop;
-                Log.i("CLOSESTSHOP", shopName);
+                Log.d("FindNearestShop", "Nearest shop: " + shopName);
                 bikeShopIndex = index;
             }
          index++;

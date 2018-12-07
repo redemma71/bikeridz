@@ -107,7 +107,7 @@ public class BikeShopFileReader {
             try {
                 is.close();
             } catch (IOException ioe){
-                Log.i("CSVFILEREADER", "Error while closing the input file");
+                Log.d("BikeShopFileReader", "Error closing the input file");
             }
         }
         return bikeShops;

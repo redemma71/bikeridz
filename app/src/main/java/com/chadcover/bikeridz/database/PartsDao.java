@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.chadcover.bikeridz.bike.Part;
 import com.chadcover.bikeridz.bike.PartType;
@@ -24,8 +25,6 @@ public class PartsDao {
         PartsDBContract.PartsContract.BIKE_ID
     };
 
-    // search for parts by bikeid
-    protected String selectionByBikeId = PartsDBContract.PartsContract.BIKE_ID + "=?";
 
     // search for parts by partid
     protected String selectionByPartId = PartsDBContract.PartsContract.PART_ID + "=?";
@@ -34,12 +33,12 @@ public class PartsDao {
     protected String selectionByPartType = PartsDBContract.PartsContract.PART_TYPE + "=?";
 
     public PartsDao(Context context) {
-        //partsDBHelper = new PartsDBHelper(context);
+        partsDBHelper = new PartsDBHelper(context);
     }
 
     public void openDB() {
-        //mReadableDB = partsDBHelper.getReadableDatabase();
-        //mWritableDB = partsDBHelper.getWritableDatabase();
+        mReadableDB = partsDBHelper.getReadableDatabase();
+        mWritableDB = partsDBHelper.getWritableDatabase();
     }
 
     public void closeDB() {
@@ -70,17 +69,20 @@ public class PartsDao {
                 null, partValue);
     }
 
-    public long deltePartById(int partId) {
+    public long deletePartById(int partId) {
         String[] selectionArgs = {partId + ""};
         return mWritableDB.delete(PartsDBContract.PartsContract.TABLE_NAME, selectionByPartId,
                 selectionArgs);
     }
 
-    public List<Part> getAllParts(int bikeId) {
-        String[] selectionArgs = {bikeId + ""};
+    public List<Part> getPartsByBikeId(int bikeId) {
+        // search for parts by bike
+        String selectionByBikeId = PartsDBContract.PartsContract.BIKE_ID + "=?";
+        String[] selectionArgs = {Integer.toString(bikeId + 1)};
         Cursor cursor = mReadableDB.query(PartsDBContract.PartsContract.TABLE_NAME,
-                projection, selectionByBikeId, selectionArgs, null, null, null);
+                this.projection, selectionByBikeId, selectionArgs, null, null, null);
         List<Part> parts = new ArrayList<>();
+
         while (cursor.moveToNext()) {
             int partId = cursor.getInt(cursor.getColumnIndex(
                     PartsDBContract.PartsContract.PART_ID));
@@ -101,7 +103,7 @@ public class PartsDao {
             Part part = new Part();
             part.setPartId(partId);
             part.setName(partName);
-            PartType partType = PartType.valueOf(partTypeStr);
+            PartType partType = PartType.valueOf(partTypeStr.toUpperCase());
             part.setTypeOfPart(partType);
             part.setDescription(partDescription);
             part.setManufacturer(partManufacturer);

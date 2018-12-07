@@ -61,10 +61,11 @@ public class FindBikeShopActivity extends AppCompatActivity {
 
         FindNearestShop bikeShop = new FindNearestShop();
         List<BikeShop> nearestShops = bikeShop.getBikeShops(this);
-        queryStr = bikeShop.getClosestBikeshopName(nearestShops, latitude, longitude);
+        queryStr = bikeShop.getClosestBikeshop(nearestShops, latitude, longitude).getName();
+        // queryStr = bikeShop.getClosestBikeshopName(nearestShops, latitude, longitude);
         LatLng nearestLatLng = new LatLng(latitude, longitude);
         nearestShop = bikeShop.getClosestBikeshop(nearestShops, nearestLatLng.lat, nearestLatLng.lng);
-        Log.i("CLOSESTSHOP", queryStr);
+        Log.d("FindBikeShopActivity", "Closest shop: " + queryStr);
 
         SQLiteOpenHelper bikeRidzDBHelper = new BikeRidzDBHelper(this);
         try {
@@ -191,11 +192,7 @@ public class FindBikeShopActivity extends AppCompatActivity {
         ///////////////////////////////////////////////////////////////////////////////////////////
 
     public void onMapMyRouteClick(View v) {
-        Log.i("ONMAPMYREOUTECLICK","clicked");
-        Log.i("MYLAT", Double.toString(this.latLng.lat));
-        Log.i("MYLNG", Double.toString(this.latLng.lng));
-        Log.i("DESTINATIONLAT", Double.toString(nearestShop.getCoords().getLat()));
-        Log.i("DESTINATIONLONG", Double.toString(nearestShop.getCoords().getLng()));
+        Log.d("FindBikeShopActivity","onMayMyRouteClick()");
 
         String mode = "&mode=b";
         String avoid = "&avoid=ht";
@@ -211,7 +208,8 @@ public class FindBikeShopActivity extends AppCompatActivity {
     }
 
     public void onTurnByTurnClick(View v) {
-        Log.i("ONTURNBYTURNCLICK", "clicked");
+        // TODO: pass intent and start TurnByTurnActivity
+        Log.d("FindBikeShopActivity", "onTurnByTurnClick()");
 
 
     }

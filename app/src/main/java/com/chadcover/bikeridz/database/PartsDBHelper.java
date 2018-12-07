@@ -4,6 +4,8 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
 import com.chadcover.bikeridz.bike.Part;
 import java.util.List;
 import java.util.ListIterator;
@@ -42,10 +44,12 @@ public class PartsDBHelper extends SQLiteOpenHelper {
         parts.put(PartsDBContract.PartsContract.PART_MANUFACTURER, partManufacturer);
         parts.put(PartsDBContract.PartsContract.PART_TYPE, typeOfPart);
         parts.put(PartsDBContract.PartsContract.BIKE_ID, bikeId);
+        db.insert(PartsDBContract.PartsContract.TABLE_NAME, null, parts);
     }
 
 
     public void updateDatabase(SQLiteDatabase db, int oldVersion, int newVersion) {
+        Log.d("PartsDBHelper", "updateDatabase(): oldVersion=" + Integer.toString(oldVersion));
         if (oldVersion < 1) {
             List<Part> mParts = getParts();
             ListIterator<Part> mPartsIter = mParts.listIterator();

@@ -40,8 +40,6 @@ public class BikesListAdapter extends RecyclerView.Adapter<BikesListAdapter.Bike
                 if (listener != null) {
                     listener.onClick(bikes.get(position).getId(),
                             bikes.get( (position + 1) % bikes.size()).getId());
-                    Log.i("CARDVIEW", "onClick()");
-
                 }
             }
         });

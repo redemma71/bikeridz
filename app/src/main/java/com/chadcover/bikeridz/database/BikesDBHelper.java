@@ -58,7 +58,7 @@ public class BikesDBHelper extends SQLiteOpenHelper {
 
 
     public void updateDatabase(SQLiteDatabase db, int oldVersion, int newVersion) {
-        Log.i("DATABASE-VERSION", Integer.toString(oldVersion));
+        Log.d("BikesDBHelper", "updateDatabase(): oldVersion=" + Integer.toString(oldVersion));
 
         if (oldVersion < 1) {
             List<Bike> mBikes = getBikes();

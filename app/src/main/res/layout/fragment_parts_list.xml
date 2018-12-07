@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BikePartsFragment"
+    android:background="@color/lightGray"
+    android:id="@+id/fragmentPartsList"
+    android:layout_marginTop="10dp"
+
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="10dp"
+
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/webLink"
+            android:textSize="20dp"
+            android:text="@string/parts_inventory_header"
+            android:layout_marginLeft="15dp"
+            android:paddingTop="5dp"
+            />
+
+        <ListView
+            android:id="@+id/partsList_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/parts_list"/>
+    </LinearLayout>
+
+</FrameLayout>

@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity
 
 
         } catch (Exception e) {
-            Log.i("LOCATIONMANAGER", "Error creating location service: " + e.getMessage());
+            Log.d("MainActivity", "onCreate(): Error creating location service: " + e.getMessage());
         }
 
 
@@ -100,24 +100,24 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onLocationChanged(Location location) {
-        Log.i("ONLOCATIONCHANGED", "changed");
+        Log.d("MainActivity", "onLocationChanged()");
         this.latitude = Double.toString(location.getLatitude());
         this.longitude = Double.toString(location.getLongitude());
     }
 
     @Override
     public void onProviderEnabled(String provider) {
-        Log.i("LOCATIONMANAGER","enabled");
+        Log.d("MainActivity","onProviderEnabled()");
     }
 
     @Override
     public void onStatusChanged(String provider, int status, Bundle extras) {
-        Log.i("LOCATIONMANGER","status");
+        Log.d("MainActivity","onStatusChanged()");
     }
 
     @Override
     public void onProviderDisabled(String provider) {
-        Log.i("LOCATIONSERVICE","disabled");
+        Log.d("MainActivity","onProviderDisabled()");
     }
 
 
@@ -129,10 +129,10 @@ public class MainActivity extends AppCompatActivity
             // Request for camera permission.
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission has been granted. Start camera preview Activity.
-                Log.i("PERMISSIONS", "granted");
+                Log.d("MainActivity", "permissions granted");
             } else {
                 // Permission request was denied.
-                Log.i("PERMISSIONS", "denied");
+                Log.d("MainActivity", "permissions denied");
             }
         }
     }

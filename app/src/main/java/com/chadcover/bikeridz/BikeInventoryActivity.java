@@ -26,7 +26,7 @@ public class BikeInventoryActivity extends AppCompatActivity implements BikesLis
                 // TODO: implement addprojectactivity
                 //Intent intent = new Intent(view.getContext(), AddProjectActivity.class);
                 //startActivity(intent);
-                Log.i("FAB","onClickListener()");
+                Log.d("BikeInventoryActivity","FAB onClickListener()");
             }
         });
     }
@@ -40,7 +40,7 @@ public class BikeInventoryActivity extends AppCompatActivity implements BikesLis
             } else {
                 Intent intent = new Intent(this, BikeDetailActivity.class);
                 intent.putExtra("bikeId", id);
-                intent.putExtra("nextBikeId", position);
+                intent.putExtra("position", position);
                 startActivity(intent);
             }
     }

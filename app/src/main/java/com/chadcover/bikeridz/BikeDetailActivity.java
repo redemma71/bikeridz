@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.chadcover.bikeridz.database.BikesDao;
@@ -35,13 +34,10 @@ public class BikeDetailActivity extends AppCompatActivity {
 
         bikePartsFragment = new BikePartsFragment();
         bikePartsFragment.setArguments(getIntent().getExtras());
-        FragmentManager partsFragManager = getSupportFragmentManager();
-        FragmentTransaction partsTransaction = partsFragManager.beginTransaction();
-        partsTransaction.add(R.id.bikePartsFragment, bikePartsFragment);
-        partsTransaction.commit();
-
-
-
+        FragmentManager fragManagerParts = getSupportFragmentManager();
+        FragmentTransaction transactionParts = fragManagerParts.beginTransaction();
+        transactionParts.add(R.id.bikePartsFragment, bikePartsFragment);
+        transactionParts.commit();
 
     }
 
@@ -51,14 +47,15 @@ public class BikeDetailActivity extends AppCompatActivity {
         bikesDao.closeDB();
     }
 
+
     // TODO: fix this listener; does not loop back to bike 0
-    public void onClick(View view){
-        int id = bikeDetailsFragment.getBikeId();
-        Log.i("THISBIKEID",Integer.toString(id));
+    public void onButtonClick(View view){
+        int id = bikeDetailsFragment.bikeId;
+        int position = bikeDetailsFragment.position;
+
         BikesDao bikesDao = BikesDao.getInstance(this.context);
         int numberOfBikes = bikesDao.getNubmerOfBikes();
-        Log.i("LISTOFBIKESSIZE",Integer.toString(numberOfBikes));
-        bikeDetailsFragment.setBike( (id + 1) % numberOfBikes);
+        bikeDetailsFragment.setBike(position);
     }
 
 }
