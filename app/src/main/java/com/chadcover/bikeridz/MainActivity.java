@@ -17,8 +17,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.chadcover.bikeridz.mapquest.Maneuver;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity
-        implements LocationListener, ActivityCompat.OnRequestPermissionsResultCallback  {
+        implements LocationListener, ActivityCompat.OnRequestPermissionsResultCallback {
 
     ///////////////////////////////////////////////////////////////////////////////////////////
     // member variables
@@ -29,6 +34,7 @@ public class MainActivity extends AppCompatActivity
     protected LocationListener locationListener;
     protected Context context;
     public String latitude, longitude;
+    List<Maneuver> maneuvers = new ArrayList<>();
 
     ///////////////////////////////////////////////////////////////////////////////////////////
     // required overrides
