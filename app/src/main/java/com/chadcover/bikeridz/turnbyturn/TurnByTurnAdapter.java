@@ -27,8 +27,14 @@ public class TurnByTurnAdapter extends RecyclerView.Adapter<TurnByTurnAdapter.Tu
 
     @Override
     public void onBindViewHolder(TurnsViewHolder viewHolder, final int position) {
-        String maneuverStr = maneuvers.get(position).getNarrative() +
-                " | " + maneuvers.get(position).getTime();
+        String maneuverStr = "";
+        if (maneuvers.size() == position + 1 ) {
+            maneuverStr = maneuvers.get(position).getNarrative();
+        } else {
+            maneuverStr = maneuvers.get(position).getNarrative() +
+                    " in " + maneuvers.get(position).getDistance() + " miles.";
+        }
+
         viewHolder.turnView.setText(maneuverStr);
     }
 
