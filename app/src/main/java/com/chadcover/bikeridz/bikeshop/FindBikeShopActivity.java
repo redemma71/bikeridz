@@ -14,9 +14,11 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.chadcover.bikeridz.MainActivity;
 import com.chadcover.bikeridz.R;
 import com.chadcover.bikeridz.database.BikeRidzDBContract;
 import com.chadcover.bikeridz.database.BikeRidzDBHelper;
+import com.chadcover.bikeridz.turnbyturn.TurnByTurnActivity;
 import com.google.maps.model.LatLng;
 
 import java.util.Calendar;
@@ -204,7 +206,9 @@ public class FindBikeShopActivity extends AppCompatActivity {
     public void onTurnByTurnClick(View v) {
         // TODO: pass intent and start TurnByTurnActivity
         Log.d("FindBikeShopActivity", "onTurnByTurnClick()");
-
-
+        Intent intentTurnByTurn = new Intent(FindBikeShopActivity.this, TurnByTurnActivity.class);
+        intentTurnByTurn.putExtra("latitude", nearestShop.getCoords().getLat());
+        intentTurnByTurn.putExtra("longitude", nearestShop.getCoords().getLng());
+        startActivity(intentTurnByTurn);
     }
 }
