@@ -46,7 +46,8 @@ public class MapquestRouteParser extends AsyncTask<String, Void, List<Maneuver>>
                 .appendPath("route")
                 .appendQueryParameter("key","I9cVIOffUqMoMKhdvbhEUt6LWcpWfeML")
                 .appendQueryParameter("from",strings[0])
-                .appendQueryParameter("to",strings[1]);
+                .appendQueryParameter("to",strings[1])
+                .appendQueryParameter("routeType","bicycle");
         String mapquestUrlStr = builder.build().toString();
 
         try {
