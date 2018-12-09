@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.chadcover.bikeridz.BikeShopFileReader;
+import com.chadcover.bikeridz.bikeshop.BikeShopFileReader;
 import com.chadcover.bikeridz.R;
 import com.chadcover.bikeridz.bikeshop.Address;
 import com.chadcover.bikeridz.bikeshop.BikeShop;

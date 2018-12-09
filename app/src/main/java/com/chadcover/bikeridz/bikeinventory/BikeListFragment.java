@@ -1,4 +1,4 @@
-package com.chadcover.bikeridz;
+package com.chadcover.bikeridz.bikeinventory;
 
 import android.os.Bundle;
 import android.app.Fragment;
@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.chadcover.bikeridz.R;
 import com.chadcover.bikeridz.bike.Bike;
 import com.chadcover.bikeridz.database.BikesDao;
 
@@ -16,10 +17,10 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class BikesListFragment extends Fragment {
-    BikesListAdapter.Listener listener;
+public class BikeListFragment extends Fragment {
+    BikeListAdapter.Listener listener;
 
-    public BikesListFragment() {
+    public BikeListFragment() {
         // Required empty public constructor
     }
 
@@ -36,9 +37,9 @@ public class BikesListFragment extends Fragment {
         List<Bike> bikes;
         bikes = bikesDao.getAllBikes();
 
-        BikesListAdapter bikesListAdapter = new BikesListAdapter(bikes);
-        bikesListRecyclerView.setAdapter(bikesListAdapter);
-        bikesListAdapter.setListener((BikesListAdapter.Listener) getActivity());
+        BikeListAdapter bikeListAdapter = new BikeListAdapter(bikes);
+        bikesListRecyclerView.setAdapter(bikeListAdapter);
+        bikeListAdapter.setListener((BikeListAdapter.Listener) getActivity());
 
         LinearLayoutManager mLayoutManager = new LinearLayoutManager( getActivity());
         bikesListRecyclerView.setLayoutManager(mLayoutManager);

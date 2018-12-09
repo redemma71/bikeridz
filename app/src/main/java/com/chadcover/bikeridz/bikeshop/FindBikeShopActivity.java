@@ -1,6 +1,5 @@
-package com.chadcover.bikeridz;
+package com.chadcover.bikeridz.bikeshop;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -15,16 +14,11 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.chadcover.bikeridz.bikeshop.BikeShop;
+import com.chadcover.bikeridz.R;
 import com.chadcover.bikeridz.database.BikeRidzDBContract;
 import com.chadcover.bikeridz.database.BikeRidzDBHelper;
 import com.google.maps.model.LatLng;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 

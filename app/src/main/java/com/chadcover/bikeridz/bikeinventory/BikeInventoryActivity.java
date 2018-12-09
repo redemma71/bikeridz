@@ -1,4 +1,4 @@
-package com.chadcover.bikeridz;
+package com.chadcover.bikeridz.bikeinventory;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,8 +8,11 @@ import android.view.View;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
 
+import com.chadcover.bikeridz.R;
+import com.chadcover.bikeridz.bike.BikeDetailActivity;
 
-public class BikeInventoryActivity extends AppCompatActivity implements BikesListAdapter.Listener {
+
+public class BikeInventoryActivity extends AppCompatActivity implements BikeListAdapter.Listener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -99,19 +99,19 @@ public class Part {
         Part iroFrame = new Part("Reynolds 631 Steel Frame", "An all-steel, all-around great commuter bike",
                 "IRO", PartType.FRAME, 1);
         Part iroWheel1 = new Part("40-spoke Tandem Wheel", "Back wheel. 700Cx28mm. 40-spokes",
-                "Peter White", PartType.WHEEL, 1);
+                "Peter White", PartType.WHEELS, 1);
         Part iroWheel2 = new Part("32-spoke Wheel", "Front wheel. 700Cx28mm, 32-spokes.",
-                "Peter White", PartType.WHEEL, 1);
+                "Peter White", PartType.WHEELS, 1);
         Part iroSeat = new Part("Brooks Swallow", "Black leather, chrome rails and rivets", "Brooks",
                 PartType.SEAT, 1);
         Part iroTires = new Part("Gatorskins", "700x28mm",
-                "Continental", PartType.TIRE, 1);
+                "Continental", PartType.TIRES, 1);
         Part iroHandlebar = new Part("Bullhorn handlebar", "Nitto RB021 Bullhorn Handlebar", "Nitto", PartType.HANDLEBARS, 1);
         Part iroCrankset = new Part("Single crankset", "42 teeth, 170mm crank arm", "IRO", PartType.CRANKSET, 1);
 
-        Part litespeedWheels = new Part("Kysyrium Elite", "Both wheels. 700Cx23mm, 24 bladed spokes.", "Mavic", PartType.WHEEL, 2);
+        Part litespeedWheels = new Part("Kysyrium Elite", "Both wheels. 700Cx23mm, 24 bladed spokes.", "Mavic", PartType.WHEELS, 2);
         Part litespeedSeat = new Part("Gatorskins", "700x28mm",
-                "Continental", PartType.TIRE, 2);
+                "Continental", PartType.TIRES, 2);
         Part litespeedDereiller = new Part("Ultegra", "Front and back dereilleurs", "Shimano", PartType.DEREILLEUR, 2);
         Part litespeedCrankset = new Part("Ultegra compact crankset", "50x34 double, 175mm crank arm", "Shimano", PartType.CRANKSET, 2);
         List<Part> parts = new ArrayList<>();

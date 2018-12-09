@@ -59,7 +59,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FindBikeShopActivity"
+            android:name=".bikeshop.FindBikeShopActivity"
             android:label="@string/title_activity_nearest_bikeshop">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -74,10 +74,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".BikeInventoryActivity"
+            android:name=".bikeinventory.BikeInventoryActivity"
             android:label="@string/title_activity_bike_inventory" />
         <activity
-            android:name=".MapMyRouteActivity"
+            android:name=".turnbyturn.MapMyRouteActivity"
             android:label="@string/title_activity_map_my_route">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -92,7 +92,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".TurnByTurnActivity"
+            android:name=".turnbyturn.TurnByTurnActivity"
             android:label="@string/title_activity_turn_by_turn" />
 
         <!--
@@ -107,8 +107,8 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".BikeDetailActivity" />
-        <activity android:name=".BikePartsActivity"></activity>
+        <activity android:name=".bike.BikeDetailActivity" />
+        <activity android:name=".bike.BikePartsActivity"></activity>
     </application>
 
 </manifest>

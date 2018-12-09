@@ -1,10 +1,11 @@
-package com.chadcover.bikeridz;
+package com.chadcover.bikeridz.bikeshop;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.chadcover.bikeridz.bike.Bike;
+import com.chadcover.bikeridz.R;
 import com.chadcover.bikeridz.bikeshop.BikeShop;
+import com.chadcover.bikeridz.bikeshop.BikeShopFileReader;
 import com.chadcover.bikeridz.bikeshop.Coords;
 
 import java.io.InputStream;

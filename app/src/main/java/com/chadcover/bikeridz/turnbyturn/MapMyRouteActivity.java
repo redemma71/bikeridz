@@ -1,10 +1,13 @@
-package com.chadcover.bikeridz;
+package com.chadcover.bikeridz.turnbyturn;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+
+import com.chadcover.bikeridz.R;
 import com.chadcover.bikeridz.bikeshop.BikeShop;
+import com.chadcover.bikeridz.bikeshop.FindNearestShop;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;

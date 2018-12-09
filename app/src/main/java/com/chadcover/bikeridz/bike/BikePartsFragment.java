@@ -1,9 +1,8 @@
-package com.chadcover.bikeridz;
+package com.chadcover.bikeridz.bike;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.chadcover.bikeridz.bike.Part;
+import com.chadcover.bikeridz.R;
 import com.chadcover.bikeridz.database.PartsDao;
 
 import java.util.ArrayList;

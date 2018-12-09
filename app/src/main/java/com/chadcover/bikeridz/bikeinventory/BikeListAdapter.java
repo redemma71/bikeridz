@@ -1,18 +1,18 @@
-package com.chadcover.bikeridz;
+package com.chadcover.bikeridz.bikeinventory;
 
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.chadcover.bikeridz.R;
 import com.chadcover.bikeridz.bike.Bike;
 
 import java.util.List;
 
-public class BikesListAdapter extends RecyclerView.Adapter<BikesListAdapter.BikesListViewHolder> {
+public class BikeListAdapter extends RecyclerView.Adapter<BikeListAdapter.BikesListViewHolder> {
     private List<Bike> bikes;
     private Listener listener;
 
@@ -20,8 +20,7 @@ public class BikesListAdapter extends RecyclerView.Adapter<BikesListAdapter.Bike
         abstract void onClick(int id, int position);
     }
 
-    public BikesListAdapter(List<Bike> bikes) {
-        this.bikes = bikes;
+    public BikeListAdapter(List<Bike> bikes) {this.bikes = bikes;
     }
 
     @Override

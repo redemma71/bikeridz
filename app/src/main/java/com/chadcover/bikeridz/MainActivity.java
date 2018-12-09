@@ -17,7 +17,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.chadcover.bikeridz.bikeinventory.BikeInventoryActivity;
+import com.chadcover.bikeridz.bikeshop.FindBikeShopActivity;
 import com.chadcover.bikeridz.mapquest.Maneuver;
+import com.chadcover.bikeridz.turnbyturn.MapMyRouteActivity;
+import com.chadcover.bikeridz.turnbyturn.TurnByTurnActivity;
 
 import java.util.ArrayList;
 import java.util.List;

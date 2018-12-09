@@ -1,4 +1,4 @@
-package com.chadcover.bikeridz;
+package com.chadcover.bikeridz.bikeshop;
 
 
 import android.app.Activity;

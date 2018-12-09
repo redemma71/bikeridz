@@ -1,4 +1,4 @@
-package com.chadcover.bikeridz;
+package com.chadcover.bikeridz.bikeinventory;
 
 import android.content.Context;
 import android.net.Uri;
@@ -8,11 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.chadcover.bikeridz.R;
+
 
 /**
  *
  */
-public class BikesInventoryFragment extends Fragment {
+public class BikeInventoryFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -24,7 +26,7 @@ public class BikesInventoryFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public BikesInventoryFragment() {
+    public BikeInventoryFragment() {
         // Required empty public constructor
     }
 
@@ -37,8 +39,8 @@ public class BikesInventoryFragment extends Fragment {
      * @return A new instance of fragment content_wishlist_fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static BikesInventoryFragment newInstance(String param1, String param2) {
-        BikesInventoryFragment fragment = new BikesInventoryFragment();
+    public static BikeInventoryFragment newInstance(String param1, String param2) {
+        BikeInventoryFragment fragment = new BikeInventoryFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
