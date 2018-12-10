@@ -2,6 +2,7 @@ package com.chadcover.bikeridz.bikeshop;
 
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.util.Log;
 
 import com.chadcover.bikeridz.bikeshop.Address;
@@ -17,7 +18,7 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BikeShopFileReader {
+public class BikeShopFileReader  {
 
     ///////////////////////////////////////////////////////////////////////////////////////////
     // member variables

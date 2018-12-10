@@ -7,6 +7,7 @@ import com.chadcover.bikeridz.R;
 import com.chadcover.bikeridz.bikeshop.BikeShop;
 import com.chadcover.bikeridz.bikeshop.BikeShopFileReader;
 import com.chadcover.bikeridz.bikeshop.Coords;
+import com.chadcover.bikeridz.database.BikeRidzDao;
 
 import java.io.InputStream;
 import java.util.List;
@@ -35,9 +36,10 @@ public class FindNearestShop {
 
 
     public List<BikeShop> getBikeShops(Context context) {
-        is = context.getResources().openRawResource(R.raw.bikeshops);
-        BikeShopFileReader fileReader = new BikeShopFileReader(is);
-        List bikeShops = fileReader.readFile();
+        BikeRidzDao bikeRidzDao = BikeRidzDao.getInstance(context);
+        bikeRidzDao.openDB();
+        List<BikeShop> bikeShops = bikeRidzDao.getAllBikeShops();
+        bikeRidzDao.closeDB();
         return bikeShops;
     }
 

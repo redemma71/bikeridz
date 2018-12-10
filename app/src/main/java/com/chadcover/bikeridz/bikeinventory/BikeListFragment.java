@@ -44,6 +44,8 @@ public class BikeListFragment extends Fragment {
         LinearLayoutManager mLayoutManager = new LinearLayoutManager( getActivity());
         bikesListRecyclerView.setLayoutManager(mLayoutManager);
 
+        bikesDao.closeDB();
+
         return v;
     }
 
